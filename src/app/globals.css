@@ -1,0 +1,58 @@
+@import 'tailwindcss';
+@import '@fontsource/ibm-plex-sans/400.css';
+@import '@fontsource/ibm-plex-sans/500.css';
+@import '@fontsource/ibm-plex-sans/600.css';
+@import '@fontsource/ibm-plex-serif/400.css';
+@import '@fontsource/ibm-plex-serif/500.css';
+@import '@fontsource/ibm-plex-serif/400-italic.css';
+@import '@fontsource/ibm-plex-mono/400.css';
+@import '@fontsource/ibm-plex-mono/500.css';
+
+/* Drawing-office palette: cool paper, drafting ink, blueprint blue for state, redline for selection. */
+@theme {
+  --color-paper: #f6f7f5;
+  --color-sheet: #fcfcfb;
+  --color-stage: #e3e8ea;
+  --color-ink: #15222c;
+  --color-ink-2: #3d4b56;
+  --color-mute: #66737d;
+  --color-rule: #c9d1d6;
+  --color-rule-2: #e2e7ea;
+  --color-blue: #1d5c8a;
+  --color-blue-wash: #e6eef5;
+  --color-red: #c0282e;
+  --color-red-wash: #f8e7e6;
+  --color-conf-pub: #1f5a36;
+  --color-conf-pub-bg: #e3efe6;
+  --color-conf-typ: #5c5314;
+  --color-conf-typ-bg: #efedd8;
+  --color-conf-est: #8a3a14;
+  --color-conf-est-bg: #f6e5da;
+
+  --font-sans: 'IBM Plex Sans', system-ui, sans-serif;
+  --font-serif: 'IBM Plex Serif', Georgia, serif;
+  --font-mono: 'IBM Plex Mono', ui-monospace, monospace;
+}
+
+html, body { background: var(--color-paper); color: var(--color-ink); }
+body { font-family: var(--font-sans); font-size: 14px; line-height: 1.5; -webkit-font-smoothing: antialiased; }
+:focus-visible { outline: 2px solid var(--color-blue); outline-offset: 2px; border-radius: 3px; }
+::selection { background: var(--color-blue-wash); }
+
+/* Thin scrollbars for side panels */
+.scroll-thin { scrollbar-width: thin; scrollbar-color: var(--color-rule) transparent; }
+
+/* Sheet: a panel that reads like a drawing sheet — fine outer rule, no drop-shadow soup. */
+.sheet { background: color-mix(in srgb, var(--color-sheet) 96%, transparent); border: 1px solid var(--color-rule); backdrop-filter: blur(6px); }
+
+/* Tabular figures everywhere numbers line up */
+.tnum { font-variant-numeric: tabular-nums; }
+
+/* Flow diagram animation: dash offset marches along the pipe in the flow direction */
+@keyframes flow { to { stroke-dashoffset: -36; } }
+.flow-line { animation: flow var(--flow-dur, 1.2s) linear infinite; }
+.flow-paused .flow-line { animation-play-state: paused; }
+@media (prefers-reduced-motion: reduce) { .flow-line { animation: none; } }
+
+/* Range inputs in ink/blue */
+input[type='range'] { accent-color: var(--color-blue); }

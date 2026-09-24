@@ -1,0 +1,4492 @@
+{
+ "systems": [
+  {
+   "id": "hull",
+   "name": "Hull & structure",
+   "desc": "The steel envelope and its framing. The hull girder must resist hogging/sagging, torsion (large open hatches) and local sea and cargo loads."
+  },
+  {
+   "id": "tanks",
+   "name": "Tanks & piping",
+   "desc": "Ballast, fuel, lube oil, fresh water and waste tanks, and the engine-room pipe runs. Pipe colours follow ISO 14726."
+  },
+  {
+   "id": "engine",
+   "name": "Main engine (internals)",
+   "desc": "MAN B&W 7G60ME-C9.5: an electronically controlled, uniflow-scavenged, two-stroke crosshead diesel engine directly coupled to a fixed-pitch propeller.",
+   "engine": true
+  },
+  {
+   "id": "propulsion",
+   "name": "Shafting, propeller & steering",
+   "desc": "Everything that transmits engine torque to thrust, plus the rudder and steering gear."
+  },
+  {
+   "id": "aux",
+   "name": "Engine-room auxiliaries",
+   "desc": "Generators, pumps, coolers, purifiers, compressors, boilers and environmental equipment that support the main engine and the ship."
+  },
+  {
+   "id": "electrical",
+   "name": "Electrical power",
+   "desc": "Main and emergency power generation and distribution."
+  },
+  {
+   "id": "cargo",
+   "name": "Cargo system",
+   "desc": "Container stowage in holds (cell guides) and on deck (lashing), hatch covers and the three deck cranes."
+  },
+  {
+   "id": "deck",
+   "name": "Deck machinery & mooring",
+   "desc": "Anchoring and mooring equipment at the forecastle and aft mooring deck."
+  },
+  {
+   "id": "nav",
+   "name": "Bridge & navigation",
+   "desc": "Wheelhouse equipment, radars, antennas and navigation lights required by SOLAS Chapter V and COLREG."
+  },
+  {
+   "id": "safety",
+   "name": "Life-saving & fire-fighting",
+   "desc": "SOLAS Chapter III life-saving appliances and Chapter II-2 fire protection, detection and extinction."
+  },
+  {
+   "id": "accom",
+   "name": "Accommodation & funnel",
+   "desc": "Deckhouse with 7 levels plus the wheelhouse, placed at the stern end, and the funnel casing."
+  }
+ ],
+ "entries": [
+  {
+   "id": "hull_shell",
+   "sys": "hull",
+   "name": "Shell plating",
+   "match": [
+    "shell_plating_seams",
+    "hull_side_shell_topside",
+    "hull_bottom_shell_antifouling",
+    "hull_flat_bottom_keel",
+    "hull_transom",
+    "hull_stern_counter_underwater",
+    "hull"
+   ],
+   "fn": "Watertight outer skin of the hull girder. Bottom and side shell carry sea pressure and longitudinal bending stress; the keel strake and bilge strake are thicker than adjacent plates.",
+   "spec": [
+    [
+     "LOA × B × D",
+     "186.0 × 35.6 × 17.9 m"
+    ],
+    [
+     "Design draught",
+     "11.0 m"
+    ],
+    [
+     "Framing",
+     "Longitudinal (bottom, side, deck)"
+    ],
+    [
+     "Coating",
+     "Anti-fouling below waterline, topside paint above"
+    ]
+   ],
+   "loc": "Entire outer hull. Red anti-fouling below the 11 m waterline, turquoise topside.",
+   "ops": [
+    "Inspect for dents, coating breakdown and corrosion at drydock (normally twice in 5 years).",
+    "Thickness measurements (UTM) at special survey per class rules.",
+    "Cathodic protection: sacrificial anodes and/or ICCP must be checked."
+   ],
+   "conf": "published",
+   "src": [
+    "jsea",
+    "tsuneishi"
+   ]
+  },
+  {
+   "id": "sheer_strake",
+   "sys": "hull",
+   "name": "Sheer strake & forecastle side",
+   "match": [
+    "sheer_strake_and_forecastle_side_shell",
+    "sheer_strake_cap"
+   ],
+   "fn": "Uppermost strake of side shell. With the deck stringer plate it forms the most highly stressed part of the hull girder, usually in high-tensile steel. Forward it rises into the forecastle side.",
+   "spec": [
+    [
+     "Material",
+     "High-tensile steel (typ. AH36/EH36)"
+    ],
+    [
+     "Forecastle",
+     "Rises from approx. 61 m to 78 m fwd of midship"
+    ]
+   ],
+   "loc": "Top edge of side shell; forward it rises into the forecastle.",
+   "ops": [
+    "No welding of attachments or cut-outs without class approval.",
+    "Check for cracks at the forecastle break and hatch-corner regions."
+   ],
+   "conf": "estimated"
+  },
+  {
+   "id": "decks",
+   "sys": "hull",
+   "name": "Main deck, forecastle deck & bulwarks",
+   "match": [
+    "main_deck",
+    "forecastle_deck",
+    "aft_bulwark",
+    "aft_bulwark_transom",
+    "aft_bulwark_cap",
+    "forecastle_break_bulkhead"
+   ],
+   "fn": "Strength deck plating between and outside the hatch openings. On a container ship the deck strips beside the hatches (plus coamings) form the top flange of the hull girder.",
+   "spec": [
+    [
+     "Forecastle height",
+     "approx. 2.7 m above main deck (est.)"
+    ],
+    [
+     "Deck coating",
+     "Non-slip grey-green"
+    ]
+   ],
+   "loc": "Upper deck around the hatches, forecastle forward and poop/mooring deck aft.",
+   "ops": [
+    "Keep freeing ports and scuppers clear.",
+    "Watch for fatigue cracking at hatch corners."
+   ],
+   "conf": "estimated"
+  },
+  {
+   "id": "bilge_keel",
+   "sys": "hull",
+   "name": "Bilge keels",
+   "match": [
+    "bilge_keel"
+   ],
+   "fn": "Longitudinal fins on the turn of bilge that damp rolling motion.",
+   "spec": [
+    [
+     "Length",
+     "approx. 60 m (≈ 1/3 L) (est.)"
+    ],
+    [
+     "Depth",
+     "approx. 0.45 m (est.)"
+    ]
+   ],
+   "loc": "Both sides at the turn of bilge, amidships.",
+   "ops": [
+    "Attached via a ground bar so that damage does not tear the shell.",
+    "Inspect for cracks at the tapered ends at drydock."
+   ],
+   "conf": "estimated"
+  },
+  {
+   "id": "double_bottom",
+   "sys": "hull",
+   "name": "Double bottom: floors & tank top",
+   "match": [
+    "double_bottom_floors",
+    "inner_bottom_tank_top",
+    "db_side_girders"
+   ],
+   "fn": "Inner bottom (tank top) about 1.8 m above the keel, with plate floors and side girders between the tank top and the outer bottom. It forms ballast and fuel tanks and protects against grounding.",
+   "spec": [
+    [
+     "DB height",
+     "≈ 1.8 m (est.)"
+    ],
+    [
+     "Floor spacing",
+     "every 4 frames ≈ 3.2 m (est.)"
+    ],
+    [
+     "Framing",
+     "Longitudinal"
+    ]
+   ],
+   "loc": "From the engine-room forward bulkhead to the collision bulkhead, under all holds.",
+   "ops": [
+    "Tank top must support container corner loads (stacking plates in way of the cell guides).",
+    "Enclosed-space entry procedure (permit, gas test, ventilation) before entering any DB tank."
+   ],
+   "conf": "typical",
+   "deep": [
+    "On a container ship the tank top is the foundation for the hold stacks: container corner-post loads go into the inner bottom through stacking plates located over floors and girders."
+   ],
+   "src": []
+  },
+  {
+   "id": "duct_keel",
+   "sys": "hull",
+   "name": "Duct keel (pipe tunnel)",
+   "match": [
+    "duct_keel"
+   ],
+   "fn": "Watertight tunnel along the centreline of the double bottom that carries the ballast and bilge mains forward from the engine room, keeping pipes out of the tanks.",
+   "spec": [
+    [
+     "Width",
+     "≈ 2.0 m (est.)"
+    ],
+    [
+     "Access",
+     "From the engine room forward bulkhead"
+    ]
+   ],
+   "loc": "Centreline of the double bottom.",
+   "ops": [
+    "Duct-keel plates are thicker than adjacent bottom plating (they take docking-block loads).",
+    "Check bilge wells in the duct keel for leaks from the ballast main."
+   ],
+   "conf": "typical"
+  },
+  {
+   "id": "double_side",
+   "sys": "hull",
+   "name": "Double side: inner hull, stringers, web frames",
+   "match": [
+    "inner_side_longitudinal_bulkhead",
+    "wing_tank_stringers",
+    "wing_web_frames"
+   ],
+   "fn": "Inner longitudinal bulkhead about 2 m inside the shell. Web frames and horizontal stringers form wing ballast tanks and give torsional stiffness to the open-hatch hull.",
+   "spec": [
+    [
+     "Width",
+     "≈ 2.0 m (est.)"
+    ],
+    [
+     "Stringers",
+     "At ≈ 1/3 and 2/3 depth (est.)"
+    ]
+   ],
+   "loc": "Both sides of the holds, full height.",
+   "ops": [
+    "Wing tanks are enclosed spaces.",
+    "Corrosion is usually worst on the underside of stringers and in the upper wing tank."
+   ],
+   "conf": "typical"
+  },
+  {
+   "id": "torsion_box",
+   "sys": "hull",
+   "name": "Upper passageway / torsion box",
+   "match": [
+    "passageway_deck"
+   ],
+   "fn": "Closed box at the top of the double side (passageway deck, upper deck, sheer strake, inner side). It gives the torsional rigidity that an open-hatch hull lacks and gives protected fore-aft access below deck.",
+   "spec": [
+    [
+     "Level",
+     "≈ 2.4 m below main deck (est.)"
+    ]
+   ],
+   "loc": "Top of each wing, just below the main deck.",
+   "ops": [
+    "Keep passageway hatches closed at sea."
+   ],
+   "conf": "estimated",
+   "deep": [
+    "Wide hatch openings leave the deck with little plating, so a box-shaped hull opened at the top would twist easily in oblique seas. The closed torsion boxes at the top of each wing restore torsional stiffness; hatch-corner stresses are the critical design point."
+   ],
+   "src": []
+  },
+  {
+   "id": "wt_bulkhead",
+   "sys": "hull",
+   "name": "Transverse watertight bulkheads",
+   "match": [
+    "transverse_watertight_bulkhead",
+    "er_casing_trunk"
+   ],
+   "fn": "Divide the hull into watertight compartments for damage stability. They include the collision bulkhead forward and the engine-room bulkheads.",
+   "spec": [
+    [
+     "Collision bulkhead",
+     "≈ 0.05–0.08 LPP aft of the forward perpendicular (SOLAS II-1/12)"
+    ],
+    [
+     "Hold bulkheads",
+     "At the crane and lashing-bridge positions (model)"
+    ]
+   ],
+   "loc": "Across the hull between the holds.",
+   "ops": [
+    "Penetrations must keep watertight integrity (approved sleeves/glands).",
+    "No openings in the collision bulkhead below the bulkhead deck except one valve-controlled pipe."
+   ],
+   "conf": "typical"
+  },
+  {
+   "id": "markings",
+   "sys": "hull",
+   "name": "Load line & draught marks",
+   "match": [
+    "draft_marks_metric",
+    "plimsoll_ring",
+    "plimsoll_bar",
+    "deck_line_mark",
+    "load_line_grid_vertical",
+    "load_line_grid_tick",
+    "hull_markings"
+   ],
+   "fn": "Plimsoll disc and load-line grid show the minimum freeboard permitted by the International Load Line Convention. Draught marks (10 cm numerals) are forward, amidships and aft on both sides.",
+   "spec": [
+    [
+     "Summer draught",
+     "11.0 m (design)"
+    ],
+    [
+     "Numeral height",
+     "10 cm, 20 cm spacing (metric)"
+    ],
+    [
+     "Positions",
+     "Fwd, midship, aft; P & S"
+    ]
+   ],
+   "loc": "Hull sides; the load-line grid is amidships.",
+   "ops": [
+    "Read the draughts at 6 points for a draught survey and loading-computer check.",
+    "Correct for trim, hog/sag and water density."
+   ],
+   "conf": "published",
+   "src": [
+    "jsea",
+    "tsuneishi"
+   ]
+  },
+  {
+   "id": "thruster_marks",
+   "sys": "hull",
+   "name": "Bow thruster & bulbous bow symbols",
+   "match": [
+    "bow_thruster_symbol_ring",
+    "bow_thruster_symbol_cross",
+    "bulbous_bow_symbol_ring",
+    "bulbous_bow_symbol_bar"
+   ],
+   "fn": "Warn tugs and boats of the thruster tunnel and the underwater bulb.",
+   "spec": [
+    [
+     "Colour",
+     "White on topside"
+    ]
+   ],
+   "loc": "Bow, both sides, above the waterline.",
+   "ops": [
+    "Keep visible; repaint at drydock."
+   ],
+   "conf": "typical"
+  },
+  {
+   "id": "breakwater",
+   "sys": "hull",
+   "name": "Breakwater",
+   "match": [
+    "breakwater"
+   ],
+   "fn": "Protects the forward container stacks from green water coming over the bow. Rows of holes relieve the water pressure.",
+   "spec": [
+    [
+     "Height",
+     "≈ 5.5 m (from reference profile)"
+    ],
+    [
+     "Position",
+     "≈ 78 m forward of midship"
+    ]
+   ],
+   "loc": "Forecastle deck, forward of hatch 10.",
+   "ops": [
+    "Inspect the stays and weld toes after heavy weather."
+   ],
+   "conf": "estimated"
+  },
+  {
+   "id": "db_ballast",
+   "sys": "tanks",
+   "name": "Double-bottom ballast tanks",
+   "match": [
+    "/^db_ballast_tank/"
+   ],
+   "fn": "Water ballast in the double bottom to control draught, trim, heel and hull stress, and to keep the propeller immersed when light.",
+   "spec": [
+    [
+     "Tanks",
+     "No.1–5, P & S (model)"
+    ],
+    [
+     "Treatment",
+     "BWM Convention D-2 via the BWMS"
+    ]
+   ],
+   "loc": "Under the holds, between the duct keel and the bilge.",
+   "ops": [
+    "Record every operation in the Ballast Water Record Book.",
+    "Check sounding pipes / remote gauges against the loading computer."
+   ],
+   "conf": "estimated"
+  },
+  {
+   "id": "wing_ballast",
+   "sys": "tanks",
+   "name": "Wing ballast tanks",
+   "match": [
+    "/^wing_ballast_tank/"
+   ],
+   "fn": "Ballast tanks inside the double side. They are used for heel and trim, and in cargo operations to compensate for crane loads.",
+   "spec": [
+    [
+     "Tanks",
+     "No.1–5, P & S (model)"
+    ]
+   ],
+   "loc": "Between the shell and the inner hull.",
+   "ops": [
+    "Free-surface effect reduces GM when tanks are part full."
+   ],
+   "conf": "estimated"
+  },
+  {
+   "id": "peak_tanks",
+   "sys": "tanks",
+   "name": "Fore & aft peak tanks",
+   "match": [
+    "fore_peak_ballast_tank",
+    "aft_peak_tank"
+   ],
+   "fn": "Peak tanks at the ends of the ship, used mainly for trim. The fore peak lies forward of the collision bulkhead.",
+   "spec": [
+    [
+     "Contents",
+     "Water ballast"
+    ]
+   ],
+   "loc": "Bow (inside the bulb and forefoot) and stern (above the stern tube).",
+   "ops": [
+    "The aft peak often surrounds the stern tube: watch for stern-tube oil in the ballast water."
+   ],
+   "conf": "estimated"
+  },
+  {
+   "id": "hfo_tanks",
+   "sys": "tanks",
+   "name": "HFO deep tanks (bunkers)",
+   "match": [
+    "/^hfo_deep_tank/"
+   ],
+   "fn": "Main fuel bunker tanks. Under MARPOL Annex I Reg. 12A they are set back from the bottom and side shell (protected location). They are heated to keep HFO pumpable.",
+   "spec": [
+    [
+     "Heating",
+     "Steam / thermal-oil coils, ≈ 40–50 °C storage"
+    ],
+    [
+     "Protection",
+     "MARPOL I/12A distance from shell"
+    ]
+   ],
+   "loc": "Lower part of hold 2, inside the inner hull (model).",
+   "ops": [
+    "Keep tank temperature ≥ 10 °C above pour point.",
+    "Sound tanks and record in the Oil Record Book."
+   ],
+   "conf": "estimated"
+  },
+  {
+   "id": "settling_service",
+   "sys": "tanks",
+   "name": "Settling & service tanks",
+   "match": [
+    "hfo_settling_tank",
+    "hfo_service_tank",
+    "mgo_service_tank"
+   ],
+   "fn": "Settling tank: heated HFO settles and water/sludge is drained. Service tanks hold purified fuel ready for the engines. An MGO service tank supplies low-sulphur operation.",
+   "spec": [
+    [
+     "Capacity",
+     "Service tank ≥ 8 h at MCR (SOLAS II-1/26)"
+    ],
+    [
+     "Temperature",
+     "HFO settling ≈ 60–70 °C"
+    ]
+   ],
+   "loc": "Engine room, third deck.",
+   "ops": [
+    "Drain water from the settling tank every watch.",
+    "Changeover HFO→MGO before ECA entry, following the fuel changeover procedure."
+   ],
+   "conf": "typical"
+  },
+  {
+   "id": "fw_tanks",
+   "sys": "tanks",
+   "name": "Fresh-water tanks",
+   "match": [
+    "/^fresh_water_tank/"
+   ],
+   "fn": "Store domestic/technical fresh water from the FW generator or shore.",
+   "spec": [
+    [
+     "Coating",
+     "Potable-water approved epoxy"
+    ]
+   ],
+   "loc": "Aft, above the aft peak (model).",
+   "ops": [
+    "Chlorinate and test potable water periodically."
+   ],
+   "conf": "estimated"
+  },
+  {
+   "id": "lo_sump",
+   "sys": "tanks",
+   "name": "Main LO sump (drain) tank",
+   "match": [
+    "main_lo_sump_tank"
+   ],
+   "fn": "Receives lube oil draining from the crankcase and supplies the main LO pumps. It is placed under the engine in the double bottom.",
+   "spec": [
+    [
+     "Oil",
+     "System oil (SAE 30, BN ≈ 5–10)"
+    ]
+   ],
+   "loc": "Double bottom under the main engine.",
+   "ops": [
+    "Monitor level: a rise can mean water contamination, a fall a leak.",
+    "Regular purification and oil analysis."
+   ],
+   "conf": "typical"
+  },
+  {
+   "id": "sludge_bilge",
+   "sys": "tanks",
+   "name": "Sludge & bilge-holding tanks",
+   "match": [
+    "sludge_tank",
+    "bilge_holding_tank"
+   ],
+   "fn": "MARPOL Annex I tanks. Sludge comes from purifiers and filters; oily bilge water is collected before the OWS.",
+   "spec": [
+    [
+     "Disposal",
+     "Incinerator or shore reception"
+    ]
+   ],
+   "loc": "Engine-room double bottom (model).",
+   "ops": [
+    "Record all transfers in the Oil Record Book Part I."
+   ],
+   "conf": "estimated"
+  },
+  {
+   "id": "mush_vent",
+   "sys": "hull",
+   "name": "Mushroom ventilators",
+   "match": [
+    "mushroom_ventilators",
+    "mushroom_ventilator"
+   ],
+   "fn": "Natural ventilation heads for stores and void spaces, with weathertight closures.",
+   "spec": [],
+   "loc": "Forecastle and poop deck.",
+   "ops": [],
+   "conf": "typical"
+  },
+  {
+   "id": "iccp",
+   "sys": "hull",
+   "name": "ICCP anodes",
+   "match": [
+    "iccp_anodes",
+    "iccp_anode"
+   ],
+   "fn": "Impressed-current cathodic protection: powered anodes and a reference electrode protect the underwater hull.",
+   "spec": [],
+   "loc": "Hull sides aft, below the waterline.",
+   "ops": [
+    "Check the ICCP panel current/voltage log daily."
+   ],
+   "conf": "typical"
+  },
+  {
+   "id": "air_pipes",
+   "sys": "tanks",
+   "name": "Tank air pipes & vent heads",
+   "match": [
+    "main_deck_railings_paint_deck_grey_green",
+    "ballast_tank_air_pipe",
+    "air_pipe_head"
+   ],
+   "fn": "Let air escape and enter when tanks fill and empty. The automatic ball-float heads stop seawater getting in (Load Line Convention).",
+   "spec": [
+    [
+     "Height",
+     "≥ 760 mm on freeboard deck"
+    ]
+   ],
+   "loc": "Along the main deck beside each hatch.",
+   "ops": [
+    "Check float discs and seats; a stuck head can let a tank collapse under vacuum or burst from overpressure."
+   ],
+   "conf": "typical"
+  },
+  {
+   "id": "pipe_sw",
+   "sys": "tanks",
+   "name": "Sea-water cooling pipes (green)",
+   "match": [
+    "sw_cooling_pipe"
+   ],
+   "fn": "Sea chest → SW pumps → central coolers → overboard.",
+   "spec": [
+    [
+     "ISO 14726 colour",
+     "Green"
+    ],
+    [
+     "Material",
+     "Galvanised steel / GRP / Cu-Ni"
+    ]
+   ],
+   "loc": "Engine room, tank-top level.",
+   "ops": [
+    "Clean the sea-chest strainers; check for erosion at bends."
+   ],
+   "conf": "typical",
+   "diagram": "cw"
+  },
+  {
+   "id": "pipe_fw",
+   "sys": "tanks",
+   "name": "LT fresh-water pipes (blue)",
+   "match": [
+    "lt_fresh_water_pipe"
+   ],
+   "fn": "Central-cooled low-temperature FW to the scavenge air cooler, LO cooler and other consumers.",
+   "spec": [
+    [
+     "ISO 14726 colour",
+     "Blue"
+    ],
+    [
+     "Temperature",
+     "≈ 36 °C to consumers (typ.)"
+    ]
+   ],
+   "loc": "Engine room.",
+   "ops": [
+    "Keep the cooling-water treatment (nitrite/borate) within limits."
+   ],
+   "conf": "typical",
+   "diagram": "cw"
+  },
+  {
+   "id": "pipe_lo",
+   "sys": "tanks",
+   "name": "Main lube-oil pipes (yellow)",
+   "match": [
+    "main_lo_pipe"
+   ],
+   "fn": "Sump → LO pumps → cooler → filter → engine inlet.",
+   "spec": [
+    [
+     "ISO 14726 colour",
+     "Yellow"
+    ],
+    [
+     "Engine inlet",
+     "≈ 2–2.5 bar (typ.)"
+    ]
+   ],
+   "loc": "Engine room, tank top.",
+   "ops": [
+    "Low LO pressure causes an automatic slowdown/shutdown."
+   ],
+   "conf": "typical",
+   "diagram": "lo"
+  },
+  {
+   "id": "pipe_fo",
+   "sys": "tanks",
+   "name": "Fuel-oil supply pipes (brown)",
+   "match": [
+    "fuel_oil_supply_pipe"
+   ],
+   "fn": "Service tank → supply/booster module → engine fuel inlet (HCUs).",
+   "spec": [
+    [
+     "ISO 14726 colour",
+     "Brown"
+    ],
+    [
+     "Pressure",
+     "≈ 7–8 bar at engine inlet"
+    ]
+   ],
+   "loc": "Engine room.",
+   "ops": [
+    "High-pressure fuel pipes are jacketed with leak detection (SOLAS II-2/4)."
+   ],
+   "conf": "typical",
+   "diagram": "fo"
+  },
+  {
+   "id": "pipe_air",
+   "sys": "tanks",
+   "name": "Starting-air pipes (light blue)",
+   "match": [
+    "starting_air_pipe"
+   ],
+   "fn": "Receivers → main starting valve → cylinder starting valves.",
+   "spec": [
+    [
+     "ISO 14726 colour",
+     "Light blue"
+    ],
+    [
+     "Pressure",
+     "30 bar"
+    ]
+   ],
+   "loc": "Engine room.",
+   "ops": [
+    "Drain water from receivers each watch; check for hot starting-air pipes (leaking valve)."
+   ],
+   "conf": "typical",
+   "diagram": "sa"
+  },
+  {
+   "id": "main_engine",
+   "sys": "engine",
+   "name": "Main engine: MAN B&W 7G60ME-C9.5",
+   "match": [
+    "main_engine_7G60ME_C",
+    "main_engine_7G60ME_C9_5_study",
+    "engine_name_plate"
+   ],
+   "fn": "Slow-speed two-stroke crosshead diesel, directly coupled to the propeller (no gearbox). “G” = ultra-long stroke (green); “ME” = electronic control of fuel injection and exhaust valves; “C” = compact.",
+   "spec": [
+    [
+     "Cylinders",
+     "7 in-line"
+    ],
+    [
+     "Bore × stroke",
+     "600 × 2,790 mm"
+    ],
+    [
+     "L1 rating",
+     "2,680 kW/cyl = 18,760 kW @ 97 r/min"
+    ],
+    [
+     "MEP at L1",
+     "21.0 bar"
+    ],
+    [
+     "Cylinder distance A",
+     "1,080 mm (est., C10.5 proxy)"
+    ],
+    [
+     "Bedplate width B1 / B2",
+     "4,090 / 4,220 mm"
+    ],
+    [
+     "Crank ℄ to foot flange C",
+     "1,500 mm"
+    ],
+    [
+     "Overhaul height H1 / H2 / H3",
+     "12,175 / 11,400 / 11,075 mm"
+    ],
+    [
+     "Min. length Lmin",
+     "≈ 9,550 mm (6-cyl 8,470 + A)"
+    ],
+    [
+     "Dry mass",
+     "≈ 500 t (6-cyl: 439 t)"
+    ],
+    [
+     "Firing order",
+     "1-7-2-5-4-3-6 (typ. for 7 cyl)"
+    ],
+    [
+     "Swept volume",
+     "0.789 m³ per cylinder"
+    ],
+    [
+     "Turbocharger (7 cyl, L1)",
+     "1 × MAN TCA77, ABB A180-L or MHI MET83MB"
+    ],
+    [
+     "SFOC, high-load tuning",
+     "165.5 / 163.0 / 167.0 g/kWh at 50 / 75 / 100 %"
+    ],
+    [
+     "Overload",
+     "110 % for 1 h in every 12 h"
+    ]
+   ],
+   "loc": "Engine room, on the centreline, driving the shaft aft.",
+   "ops": [
+    "The engine installed on the geared version of this class is not published: this engine is taken from the gearless sister ship.",
+    "Open the Engine study mode for the internal cutaway."
+   ],
+   "conf": "published",
+   "engine": true,
+   "deep": [
+    "Layout area (kW/cyl): L1 2,680 @ 97 r/min, L2 2,010 @ 97, L3 1,990 @ 72, L4 1,500 @ 72. The specified MCR (SMCR) may be chosen anywhere inside it; this ship’s actual SMCR is not published. Try it in the engine cycle panel.",
+    "MEP derating (moving SMCR towards the L2–L4 line) lowers SFOC because the Pmax/MEP ratio rises. Moving SMCR parallel to the constant-MEP lines does not.",
+    "SFOC is quoted at ISO conditions (25 °C air, 25 °C scavenge-air coolant, 1,000 mbar) and LCV 42,700 kJ/kg, with +5 % tolerance at 85–100 % load. Part-load or low-load exhaust-gas-bypass (EGB) tuning moves the SFOC minimum to lower loads at the cost of a higher figure at 100 %.",
+    "Because injection is electronically controlled, the engine can run down to about 15–20 % of L1 speed (about 20–25 % for camshaft MC/MC-C engines).",
+    "Reversing is done in software: the ECS changes the timing of fuel injection, exhaust-valve actuation and starting valves. There is no reversing servo or camshaft shift.",
+    "Designation: 7 cylinders, G = ultra-long stroke, 60 = bore in cm, M = engine programme, E = electronically controlled, C = compact, 9 = mark, .5 = version."
+   ],
+   "src": [
+    "man_pg",
+    "tsuneishi_pr"
+   ]
+  },
+  {
+   "id": "me_bedplate",
+   "sys": "engine",
+   "name": "Bedplate",
+   "match": [
+    "bedplate",
+    "bedplate_longitudinal_girder",
+    "bedplate_main_bearing_girder",
+    "bedplate_oil_pan",
+    "bedplate_foot_flange",
+    "bedplate_top_flange",
+    "bedplate_girder_stiffener",
+    "bedplate_oil_outlet",
+    "engine_foundation",
+    "resin_chocks",
+    "holding_down_bolts",
+    "engine_seating_top_plate"
+   ],
+   "fn": "Welded foundation of the engine. It carries the main bearings, collects the crankcase oil and is bolted and chocked to the tank top with holding-down bolts.",
+   "spec": [
+    [
+     "Construction",
+     "Welded longitudinal girders + cast/welded bearing supports"
+    ],
+    [
+     "Width B1 (foot) / B2 (top)",
+     "4,090 / 4,220 mm"
+    ],
+    [
+     "Crank ℄ to foot flange",
+     "1,500 mm"
+    ],
+    [
+     "Chocking",
+     "Epoxy resin chocks (typ.)"
+    ],
+    [
+     "Holding-down bolts",
+     "Long, elastic, hydraulically tightened"
+    ],
+    [
+     "Taper",
+     "None when mounted on epoxy chocks"
+    ]
+   ],
+   "loc": "Bottom of the engine, on the engine seating in the double bottom.",
+   "ops": [
+    "Check holding-down bolt tension and the chocks periodically.",
+    "Measure crankshaft deflections to detect bedplate/bearing misalignment."
+   ],
+   "conf": "typical",
+   "src": [
+    "man_pg"
+   ]
+  },
+  {
+   "id": "me_main_bearing",
+   "sys": "engine",
+   "name": "Main bearings",
+   "match": [
+    "main_bearing_shell",
+    "main_bearing_cap",
+    "crank_journal",
+    "main_bearing_lo_supply"
+   ],
+   "fn": "Thin-shell white-metal bearings supporting the crankshaft journals. There is one bearing between each pair of throws, plus the end bearings.",
+   "spec": [
+    [
+     "Number",
+     "8 (7 cyl + 1)"
+    ],
+    [
+     "Lining",
+     "White metal (tin-based) on steel shell"
+    ],
+    [
+     "Lubrication",
+     "Main LO system"
+    ]
+   ],
+   "loc": "In the bedplate cross girders, under the frame box.",
+   "ops": [
+    "Monitor bearing temperature and oil-mist detector.",
+    "Measure clearance with the bearing wear monitor or feeler gauge during overhaul."
+   ],
+   "conf": "typical",
+   "src": [
+    "man_pg"
+   ],
+   "deep": [
+    "The bottom shell can be rotated out and back in with special tools while the crankshaft is lifted hydraulically, so the shaft does not have to come out."
+   ]
+  },
+  {
+   "id": "me_crankshaft",
+   "sys": "engine",
+   "name": "Crankshaft",
+   "match": [
+    "crankshaft",
+    "crank_web",
+    "crank_throw_1",
+    "crank_throw_2",
+    "crank_throw_3",
+    "crank_throw_4",
+    "crank_throw_5",
+    "crank_throw_6",
+    "crank_throw_7"
+   ],
+   "fn": "Semi-built crankshaft: webs are shrink-fitted onto the journals. It turns the reciprocating force from each connecting rod into torque.",
+   "spec": [
+    [
+     "Throw radius",
+     "1,395 mm (½ stroke)"
+    ],
+    [
+     "Throw angle",
+     "360°/7 ≈ 51.4°"
+    ],
+    [
+     "Throw spacing",
+     "1,080 mm (cylinder distance)"
+    ],
+    [
+     "Journal / pin ⌀",
+     "≈ 720 / 660 mm (est.)"
+    ],
+    [
+     "Speed",
+     "≤ 97 r/min (L1)"
+    ],
+    [
+     "Construction",
+     "Semi-built, forged or cast steel throws (9+ cyl: in two parts)"
+    ],
+    [
+     "Fore end",
+     "Axial damper collar, tuning-wheel / PTO flange"
+    ],
+    [
+     "Aft end",
+     "Thrust collar, HPS step-up gear flange, turning wheel, coupling flange"
+    ]
+   ],
+   "loc": "Along the bedplate, full engine length.",
+   "ops": [
+    "Take deflection readings at 5 positions per throw; compare with the maker limits.",
+    "Check shrink-fit reference marks for slippage after a heavy shock (e.g. grounding)."
+   ],
+   "conf": "typical",
+   "src": [
+    "man_pg"
+   ]
+  },
+  {
+   "id": "me_crankpin",
+   "sys": "engine",
+   "name": "Crankpin & crankpin bearing",
+   "match": [
+    "crankpin",
+    "big_end_bearing_housing"
+   ],
+   "fn": "Offset pin in each throw. It carries the big-end (crankpin) bearing of the connecting rod.",
+   "spec": [
+    [
+     "Offset",
+     "1,395 mm from shaft centre"
+    ]
+   ],
+   "loc": "Between the two webs of each throw.",
+   "ops": [
+    "Check crankpin bearing clearance at overhaul.",
+    "Oil comes via the crosshead and a bore down the connecting rod."
+   ],
+   "conf": "typical"
+  },
+  {
+   "id": "me_thrust",
+   "sys": "engine",
+   "name": "Thrust bearing",
+   "match": [
+    "thrust_bearing_housing",
+    "thrust_collar",
+    "thrust_pads",
+    "thrust_shaft_coupling_flange"
+   ],
+   "fn": "B&W-Michell type thrust bearing built into the aft end of the bedplate. The thrust collar on the crankshaft pushes on steel segments lined with white metal; the thrust passes through the bedplate to the end chocks, the engine seating and the hull.",
+   "spec": [
+    [
+     "Type",
+     "B&W-Michell, integrated in bedplate aft"
+    ],
+    [
+     "Segments",
+     "240° arc type (engines ≤ 8 cyl); 360° for 9+ cyl"
+    ],
+    [
+     "Lubrication",
+     "Main LO system"
+    ]
+   ],
+   "loc": "Aft end of the engine.",
+   "ops": [
+    "Monitor pad temperature; high temperature means overload or low oil flow."
+   ],
+   "conf": "published",
+   "deep": [
+    "The thrust shaft is an integral part of the crankshaft: the collar, the HPS step-up gear flange, the turning-wheel flange and the coupling flange are all on the aft end.",
+    "MAN’s flexible thrust-cam design is used for the collar on a range of engine types.",
+    "End chocks (and top bracing for hull vibration) are part of the yard’s installation, not the engine delivery."
+   ],
+   "src": [
+    "man_pg"
+   ]
+  },
+  {
+   "id": "me_turning",
+   "sys": "engine",
+   "name": "Turning wheel & turning gear",
+   "match": [
+    "turning_wheel",
+    "turning_gear"
+   ],
+   "fn": "Toothed wheel on the crankshaft. The electric turning gear engages it to slowly rotate the engine for inspection and before starting.",
+   "spec": [
+    [
+     "Interlock",
+     "Start is blocked while the turning gear is engaged"
+    ]
+   ],
+   "loc": "Aft end, between thrust bearing and shaft line.",
+   "ops": [
+    "Always turn the engine with indicator cocks open before starting after a long stop."
+   ],
+   "conf": "typical"
+  },
+  {
+   "id": "me_damper",
+   "sys": "engine",
+   "name": "Axial vibration damper",
+   "match": [
+    "axial_vibration_damper",
+    "axial_vibration_monitor",
+    "axial_vibration_damper_housing"
+   ],
+   "fn": "Oil-damped piston on the fore-end crankshaft journal that limits axial (longitudinal) crankshaft vibration.",
+   "spec": [
+    [
+     "Monitoring",
+     "Axial vibration monitor required from Mk 9"
+    ],
+    [
+     "Construction",
+     "Piston = collar on the fore main journal; split housing on the main-bearing support"
+    ]
+   ],
+   "loc": "Fore end of the crankshaft.",
+   "ops": [
+    "Check damper oil pressure and AVM alarms."
+   ],
+   "conf": "typical",
+   "src": [
+    "man_pg"
+   ]
+  },
+  {
+   "id": "me_encoder",
+   "sys": "engine",
+   "name": "Crank angle encoders / tacho",
+   "match": [
+    "angle_encoder"
+   ],
+   "fn": "Measure the exact crank angle and speed. The ME control system needs them to time fuel injection and exhaust-valve opening for each cylinder.",
+   "spec": [
+    [
+     "Redundancy",
+     "Two encoder systems (typ.)"
+    ]
+   ],
+   "loc": "Fore end of the engine.",
+   "ops": [
+    "Encoder failure causes a slowdown/shutdown: check coupling and cabling."
+   ],
+   "conf": "typical"
+  },
+  {
+   "id": "me_frame_box",
+   "sys": "engine",
+   "name": "Frame box & A-frames",
+   "match": [
+    "frame_box_a_frames",
+    "flange_bolts",
+    "a_frame",
+    "frame_box_side_plate_exhaust",
+    "frame_box_side_plate_manoeuvring",
+    "diaphragm_plate"
+   ],
+   "fn": "Welded box on top of the bedplate that forms the crankcase and carries the crosshead guides. Long staybolts clamp bedplate, frame box and cylinder frame together.",
+   "spec": [
+    [
+     "Construction",
+     "Welded; bolted to the bedplate"
+    ],
+    [
+     "Exhaust side",
+     "Relief valves per cylinder"
+    ],
+    [
+     "Manoeuvring side",
+     "Large hinged crankcase doors"
+    ]
+   ],
+   "loc": "Above the bedplate.",
+   "ops": [
+    "Tighten staybolts to specification after overhaul."
+   ],
+   "conf": "published",
+   "src": [
+    "man_pg"
+   ],
+   "deep": [
+    "Bedplate, frame box and cylinder frame are held together by long staybolts, which carry the firing load so the welded structures stay in compression."
+   ]
+  },
+  {
+   "id": "me_crankcase_door",
+   "sys": "engine",
+   "name": "Crankcase doors",
+   "match": [
+    "crankcase_door"
+   ],
+   "fn": "Access doors on the manoeuvring side for crankcase inspection.",
+   "spec": [
+    [
+     "Rule",
+     "Open only after the engine has stopped and cooled (explosion risk)"
+    ]
+   ],
+   "loc": "Frame box, manoeuvring (HCU) side.",
+   "ops": [
+    "Wait ≥ 20 min after stopping before opening (oil-mist ignition risk).",
+    "Check for white-metal flakes and water in the oil."
+   ],
+   "conf": "typical"
+  },
+  {
+   "id": "me_relief",
+   "sys": "engine",
+   "name": "Crankcase explosion relief valves",
+   "match": [
+    "crankcase_relief_valve"
+   ],
+   "fn": "Spring-loaded valves with flame arresters that release a crankcase explosion pressure wave (SOLAS II-1/27, IACS UR M9).",
+   "spec": [
+    [
+     "Setting",
+     "≈ 0.05 bar opening (typ.)"
+    ]
+   ],
+   "loc": "Frame box, exhaust side, one per cylinder.",
+   "ops": [
+    "Keep the flame traps clean and free.",
+    "The oil-mist detector must be working."
+   ],
+   "conf": "typical"
+  },
+  {
+   "id": "me_guides",
+   "sys": "engine",
+   "name": "Crosshead guides & guide shoes",
+   "match": [
+    "crosshead_guide",
+    "crosshead_guide_shoe"
+   ],
+   "fn": "The guides take the side thrust from the angled connecting rod, so the piston and liner see no side load. The shoes are white-metal lined and slide on guide strips on the A-frames.",
+   "spec": [
+    [
+     "Shoe lining",
+     "White metal"
+    ]
+   ],
+   "loc": "Inside the frame box, each side of every crosshead.",
+   "ops": [
+    "Check guide clearance and shoe wear; misalignment causes stuffing-box and liner wear."
+   ],
+   "conf": "typical"
+  },
+  {
+   "id": "me_crosshead",
+   "sys": "engine",
+   "name": "Crosshead",
+   "match": [
+    "crosshead_pin",
+    "crosshead_bearing_housing",
+    "crosshead_telescopic_lo_pipe",
+    "crosshead_lo_inlet_main",
+    "crosshead_and_piston_1",
+    "crosshead_and_piston_2",
+    "crosshead_and_piston_3",
+    "crosshead_and_piston_4",
+    "crosshead_and_piston_5",
+    "crosshead_and_piston_6",
+    "crosshead_and_piston_7"
+   ],
+   "fn": "Joins the piston rod (straight up-and-down movement) to the connecting rod (swinging). The crosshead bearing carries the full firing load and oscillates rather than rotating, so oil film support is critical.",
+   "spec": [
+    [
+     "Oil supply",
+     "Main LO via telescopic/swing pipe"
+    ],
+    [
+     "Stroke",
+     "2,790 mm"
+    ],
+    [
+     "Crosshead",
+     "Forged steel"
+    ],
+    [
+     "Guide shoes",
+     "Cast steel, white metal, low-friction type"
+    ],
+    [
+     "Bearing",
+     "Wide-pad design, thin-walled lined shells"
+    ]
+   ],
+   "loc": "Inside the frame box, between the piston rod and connecting rod.",
+   "ops": [
+    "Crosshead bearing damage is a common cause of serious failure: monitor temperature and clearances."
+   ],
+   "conf": "typical",
+   "src": [
+    "man_pg"
+   ],
+   "deep": [
+    "The crosshead bearing never rotates fully: it oscillates through a small angle under a load that never reverses, so a hydrodynamic oil film is hard to keep. That is why it uses wide pads and a dedicated oil supply via the telescopic pipe.",
+    "Lube oil reaches the crankpin bearing through ducts in the crosshead and connecting rod."
+   ]
+  },
+  {
+   "id": "me_conrod",
+   "sys": "engine",
+   "name": "Connecting rod",
+   "match": [
+    "/^connecting_rod_\\d$/",
+    "conrod_shank",
+    "big_end_bearing_cap",
+    "big_end_bolts",
+    "crosshead_bearing_bolts"
+   ],
+   "fn": "Forged rod between the crosshead bearing (top) and crankpin bearing (bottom).",
+   "spec": [
+    [
+     "Length",
+     "≈ 3.1 m centre-to-centre (est.)"
+    ],
+    [
+     "Material",
+     "Forged or cast steel"
+    ],
+    [
+     "Bearing caps",
+     "Crosshead and crankpin, studs tightened hydraulically"
+    ]
+   ],
+   "loc": "Crankcase.",
+   "ops": [
+    "Check bolt pre-tension (hydraulic tools) at every overhaul."
+   ],
+   "conf": "estimated",
+   "src": [
+    "man_pg"
+   ]
+  },
+  {
+   "id": "me_piston_rod",
+   "sys": "engine",
+   "name": "Piston rod",
+   "match": [
+    "piston_rod",
+    "piston_rod_foot_flange",
+    "piston_rod_foot_bolts"
+   ],
+   "fn": "Carries the gas load from the piston to the crosshead. Hollow rod passes cooling oil up to the piston crown and back.",
+   "spec": [
+    [
+     "Surface",
+     "Hardened, precision ground in way of stuffing box"
+    ]
+   ],
+   "loc": "Between crosshead and piston, through the stuffing box.",
+   "ops": [
+    "Inspect for scoring where it passes the stuffing box."
+   ],
+   "conf": "typical"
+  },
+  {
+   "id": "me_stuffing_box",
+   "sys": "engine",
+   "name": "Piston-rod stuffing box",
+   "match": [
+    "stuffing_box",
+    "stuffing_box_rings",
+    "stuffing_box_drain_pipe"
+   ],
+   "fn": "Seals the piston rod where it passes through the diaphragm. Upper rings keep scavenge air and dirty cylinder oil out of the crankcase; lower scraper rings keep crankcase oil in.",
+   "spec": [
+    [
+     "Drain",
+     "Stuffing-box drain oil to separate tank"
+    ],
+    [
+     "Rings",
+     "Segmented, garter-spring loaded"
+    ]
+   ],
+   "loc": "In the diaphragm plate between crankcase and scavenge space.",
+   "ops": [
+    "Watch the leak-off (tell-tale): air blow means worn sealing rings; much oil means worn scraper rings.",
+    "Worn stuffing boxes increase the risk of scavenge fires and crankcase contamination."
+   ],
+   "conf": "typical",
+   "src": [
+    "man_pg"
+   ],
+   "deep": [
+    "Oil scraped off the piston rod is dirty with cylinder-oil residues and is led to a separate stuffing-box drain system (Project Guide ch. 10), not back to the sump."
+   ]
+  },
+  {
+   "id": "me_piston",
+   "sys": "engine",
+   "name": "Piston (crown & skirt)",
+   "match": [
+    "piston_crown",
+    "piston_skirt",
+    "piston_rings",
+    "piston_cooling_oil_insert",
+    "piston_crown_bolts"
+   ],
+   "fn": "Two-piece piston: a heat-resistant alloy-steel crown (oil-cooled from inside) and a short skirt. The rings seal combustion gas; the top ring is usually CPR (controlled pressure relief) type.",
+   "spec": [
+    [
+     "Diameter",
+     "600 mm"
+    ],
+    [
+     "Crown",
+     "Heat-resistant steel, oil-cooled"
+    ],
+    [
+     "Rings",
+     "3 or 4; top ring CPR type, all alu-coated for running-in"
+    ],
+    [
+     "Skirt",
+     "Cast iron with bronze band or Mo coating"
+    ],
+    [
+     "Crown cooling",
+     "System oil via piston rod bore"
+    ]
+   ],
+   "loc": "Inside the cylinder liner.",
+   "ops": [
+    "Inspect through the scavenge ports: ring condition, deposits, liner lacquer/scuffing.",
+    "Measure crown burn-off and ring-groove clearance at overhaul."
+   ],
+   "conf": "published",
+   "deep": [
+    "Ring grooves are hard-chrome plated on both the upper and lower flanks.",
+    "The uppermost ring is Controlled Pressure Relief (CPR) type: calibrated leak grooves spread the pressure drop across the ring pack, reducing top-ring load and temperature. Depending on engine type the top ring is taller than the others.",
+    "The piston cleaning (PC) ring at the top of the liner scrapes ash and carbon off the top land, protecting the liner from bore polish."
+   ],
+   "src": [
+    "man_pg"
+   ]
+  },
+  {
+   "id": "me_cylinder_frame",
+   "sys": "engine",
+   "name": "Cylinder frame & scavenge box",
+   "match": [
+    "cylinder_frame",
+    "cylinder_frame_scavenge_box",
+    "scavenge_box_inspection_cover",
+    "scavenge_box_drain",
+    "scavenge_box_relief_valve",
+    "cylinder_frame_rib"
+   ],
+   "fn": "Casting/welded box that holds the liners and forms the scavenge air space around the scavenge ports.",
+   "spec": [
+    [
+     "Scavenge pressure",
+     "up to ≈ 4.5 bar at MCR (typ.)"
+    ]
+   ],
+   "loc": "Above the frame box.",
+   "ops": [
+    "Drain the scavenge box regularly and watch for oil build-up: this is a scavenge-fire risk.",
+    "Fixed fire extinguishing (steam/CO2) is connected to the scavenge space."
+   ],
+   "conf": "typical"
+  },
+  {
+   "id": "me_liner",
+   "sys": "engine",
+   "name": "Cylinder liner",
+   "match": [
+    "cylinder_liner",
+    "cylinder_liner_lower",
+    "liner_cooling_bores"
+   ],
+   "fn": "Alloyed cast-iron liner suspended in the cylinder frame by a low-situated flange. A cooling jacket sits at the top; the lower part has the scavenge ports, and drilled holes admit cylinder oil through the lubricator quills.",
+   "spec": [
+    [
+     "Bore",
+     "600 mm"
+    ],
+    [
+     "Wear limit",
+     "≈ 0.4–0.8% of bore (maker guidance)"
+    ]
+   ],
+   "loc": "In the cylinder frame, under the cover.",
+   "ops": [
+    "Calibrate liner wear at overhaul; check for cloverleafing and scuffing.",
+    "Adjust cylinder-oil feed rate to fuel sulphur content."
+   ],
+   "conf": "published",
+   "deep": [
+    "Liners prepared for temperature sensors are standard on 95–80 bore engines and an option on this engine.",
+    "Together with the cylinder frame, the liner forms the scavenge air space."
+   ],
+   "src": [
+    "man_pg"
+   ]
+  },
+  {
+   "id": "me_pc_ring",
+   "sys": "engine",
+   "name": "Piston cleaning (PC) ring",
+   "match": [
+    "piston_cleaning_ring"
+   ],
+   "fn": "A ring fitted in the top of the liner, slightly smaller than the bore. It scrapes coke off the piston top land every stroke, which prevents bore polishing and cylinder-oil consumption from rising.",
+   "spec": [
+    [
+     "Position",
+     "Top of liner bore (code book item “piston cleaning ring”)"
+    ]
+   ],
+   "loc": "Upper end of every liner.",
+   "ops": [
+    "Check for wear steps at overhaul; replace with the liner or when the step exceeds maker limits."
+   ],
+   "conf": "published"
+  },
+  {
+   "id": "me_ports",
+   "sys": "engine",
+   "name": "Scavenge ports",
+   "match": [
+    "scavenge_ports"
+   ],
+   "fn": "Ring of angled ports in the lower liner, uncovered by the piston near BDC. Charge air enters with a swirl and pushes exhaust up through the exhaust valve (uniflow scavenging).",
+   "spec": [
+    [
+     "Swirl",
+     "Tangential inclination"
+    ],
+    [
+     "Opening",
+     "Uncovered in the last ≈ 20% of the stroke"
+    ]
+   ],
+   "loc": "Lower part of every liner, inside the scavenge box.",
+   "ops": [
+    "The ports are the inspection window for piston rings and liner surface."
+   ],
+   "conf": "typical"
+  },
+  {
+   "id": "me_jacket",
+   "sys": "engine",
+   "name": "Cooling jacket",
+   "match": [
+    "cooling_jacket",
+    "ht_jacket_water_mains",
+    "ht_jacket_water_inlet_main",
+    "ht_jacket_water_outlet_main"
+   ],
+   "fn": "Surrounds the upper liner. HT jacket water flows through it and on to the cylinder cover.",
+   "spec": [
+    [
+     "Outlet temp.",
+     "≈ 85–90 °C (typ.)"
+    ]
+   ],
+   "loc": "Upper part of every liner.",
+   "ops": [
+    "Low jacket temperature causes cold corrosion; high temperature causes overheating."
+   ],
+   "conf": "typical",
+   "diagram": "cw"
+  },
+  {
+   "id": "me_lubrication",
+   "sys": "engine",
+   "name": "Cylinder lubrication (Alpha lubricator & quills)",
+   "match": [
+    "cylinder_lubrication_quills",
+    "alpha_cylinder_lubricator",
+    "cylinder_oil_supply_pipe"
+   ],
+   "fn": "Electronically timed injection of high-BN cylinder oil through quills in the liner wall. Rate is controlled per cylinder by load and fuel sulphur content.",
+   "spec": [
+    [
+     "Feed rate",
+     "≈ 0.6–1.0 g/kWh (typ.)"
+    ],
+    [
+     "Oil",
+     "Cylinder oil BN 15–140 matched to fuel S"
+    ]
+   ],
+   "loc": "Around each liner, between the cooling jacket and the scavenge box.",
+   "ops": [
+    "Match BN to fuel sulphur content (0.5% VLSFO vs 3.5% HSFO with scrubber).",
+    "Send scrape-down samples for iron and BN analysis."
+   ],
+   "conf": "typical",
+   "diagram": "lo",
+   "src": [
+    "man_pg"
+   ],
+   "deep": [
+    "Alpha Adaptive Cylinder oil Control (ACC) sets the feed rate proportional to fuel sulphur content and engine load, above a minimum rate; the ACC factor is tuned from scrape-down oil analysis (residual BN and iron).",
+    "The electronic lubricator can pre-lubricate the liner before starting. During running-in, feed rates up to 1.5 × the normal values are used."
+   ]
+  },
+  {
+   "id": "me_cover",
+   "sys": "engine",
+   "name": "Cylinder cover",
+   "match": [
+    "cylinder_cover",
+    "cylinder_cover_studs",
+    "cylinder_cover_hydraulic_nuts",
+    "cylinder_number_plate",
+    "exhaust_valve_bottom_piece"
+   ],
+   "fn": "One-piece forged steel cover with cooling bores. It carries the exhaust valve, fuel valves, starting valve, safety valve and indicator cock, and is held down by hydraulically tightened studs.",
+   "spec": [
+    [
+     "Material",
+     "Forged steel, one piece, with cooling bores"
+    ],
+    [
+     "Studs",
+     "8 (model)"
+    ],
+    [
+     "Bores",
+     "Central exhaust valve, 2 fuel valves, starting valve, indicator valve"
+    ],
+    [
+     "Fastening",
+     "Studs and nuts tightened with hydraulic jacks"
+    ]
+   ],
+   "loc": "Top of each cylinder.",
+   "ops": [
+    "Tighten studs hydraulically to the specified pressure.",
+    "Check for cracks between the valve bores."
+   ],
+   "conf": "published",
+   "src": [
+    "man_pg"
+   ]
+  },
+  {
+   "id": "me_fuel_valve",
+   "sys": "engine",
+   "name": "Fuel valves (injectors)",
+   "match": [
+    "fuel_valve",
+    "fuel_valve_nozzle"
+   ],
+   "fn": "Two slide-type fuel valves per cylinder atomise fuel from the booster into the combustion chamber. They open at a set pressure.",
+   "spec": [
+    [
+     "Per cylinder",
+     "2"
+    ],
+    [
+     "Injection pressure",
+     "≈ 600–1,000 bar"
+    ],
+    [
+     "Opening / closing",
+     "Opened by fuel pressure, closed by spring"
+    ],
+    [
+     "Vent slide",
+     "Circulates fuel when stopped; prevents filling the cylinder if the spindle sticks"
+    ]
+   ],
+   "loc": "Cylinder cover, symmetrically on each side of the exhaust valve.",
+   "ops": [
+    "Pressure-test and overhaul at maker intervals; check the spray pattern and nozzle holes."
+   ],
+   "conf": "typical",
+   "diagram": "fo",
+   "src": [
+    "man_pg"
+   ]
+  },
+  {
+   "id": "me_starting_valve",
+   "sys": "engine",
+   "name": "Cylinder starting valve",
+   "match": [
+    "starting_valve",
+    "starting_air_main",
+    "starting_air_main_pipe"
+   ],
+   "fn": "Admits 30-bar starting air to the cylinder to turn the engine at start. It is opened by control air, timed by the engine control system through one solenoid valve per cylinder, and closed by a spring.",
+   "spec": [
+    [
+     "Air",
+     "30 bar"
+    ],
+    [
+     "Control",
+     "Solenoid valve per cylinder, CCU-timed"
+    ],
+    [
+     "Slow turning",
+     "Programmed in the ECS before start"
+    ]
+   ],
+   "loc": "Cylinder cover.",
+   "ops": [
+    "A hot starting-air branch pipe means a leaking valve, which is a starting-air explosion risk."
+   ],
+   "conf": "published",
+   "diagram": "sa",
+   "src": [
+    "man_pg"
+   ]
+  },
+  {
+   "id": "me_indicator",
+   "sys": "engine",
+   "name": "Indicator cock & cylinder safety valve",
+   "match": [
+    "indicator_cock",
+    "cylinder_cover_safety_valve"
+   ],
+   "fn": "Indicator cock: for pressure measurement (PMI) and blowing through before start. Safety valve: relieves excessive cylinder pressure.",
+   "spec": [
+    [
+     "Safety valve",
+     "Set ≈ 40% above max pressure (typ.)"
+    ]
+   ],
+   "loc": "Cylinder cover.",
+   "ops": [
+    "Open indicator cocks and turn the engine before the first start."
+   ],
+   "conf": "typical"
+  },
+  {
+   "id": "me_exhaust_valve",
+   "sys": "engine",
+   "name": "Exhaust valve",
+   "match": [
+    "exhaust_valve_housing",
+    "exhaust_valve_spindle",
+    "exhaust_valve_air_spring",
+    "exhaust_valve_hydraulic_actuator",
+    "exhaust_valve_outlet_duct",
+    "exhaust_valve_actuator",
+    "exhaust_branch_pipe",
+    "exhaust_valve_push_rod",
+    "exhaust_valve_rotation_vanes",
+    "exhaust_valve_air_supply_pipe"
+   ],
+   "fn": "Central poppet valve that lets exhaust out. It is opened hydraulically (from the HCU, via the FIVA valve) and closed by an air spring. The spindle rotates slightly each stroke to even out wear on the seat.",
+   "spec": [
+    [
+     "Housing",
+     "Uncooled cast iron (“Millenium” type)"
+    ],
+    [
+     "Bottom piece",
+     "Water-cooled steel, flame-hardened wide seat"
+    ],
+    [
+     "Spindle",
+     "DuraSpindle; turned by a vane wheel in the gas flow"
+    ],
+    [
+     "Actuation",
+     "Hydraulic open (two-stage actuator), air-spring close"
+    ],
+    [
+     "Guide sealing",
+     "Controlled Oil Level (COL) bath"
+    ],
+    [
+     "Timing",
+     "Set freely by the ECS (no camshaft)"
+    ]
+   ],
+   "loc": "Centre of each cylinder cover.",
+   "ops": [
+    "Overhaul the seat and spindle (grinding) at maker intervals.",
+    "Check the spindle rotation indicator."
+   ],
+   "conf": "published",
+   "deep": [
+    "Low-force design: the two-stage actuator gives a fast initial opening against cylinder pressure, then a lower-force stroke to full lift.",
+    "The Controlled Oil Level bath at the bottom of the air cylinder lubricates the spindle guide and sealing ring.",
+    "Exhaust-valve closing time sets the effective compression: closing earlier raises compression pressure. The ECS uses this, together with injection timing, to hold Pmax at part load."
+   ],
+   "src": [
+    "man_pg"
+   ]
+  },
+  {
+   "id": "me_hcu",
+   "sys": "engine",
+   "name": "Hydraulic cylinder unit (HCU)",
+   "match": [
+    "/^hydraulic_cylinder_unit/",
+    "hcu_distribution_block",
+    "hcu_accumulators",
+    "hydraulic_cylinder_unit",
+    "hcu_exhaust_valve_actuator",
+    "hcu_leakage_alarm"
+   ],
+   "fn": "One per cylinder. A distribution block carries the fuel-oil pressure booster, the exhaust-valve actuator supply, the FIVA control valve and the accumulators.",
+   "spec": [
+    [
+     "Medium",
+     "System oil (filtered) as servo oil"
+    ],
+    [
+     "Control",
+     "CCU per cylinder"
+    ],
+    [
+     "Parts",
+     "Base plate, distributor block, accumulators, fuel booster, exhaust-valve actuator"
+    ],
+    [
+     "Valve",
+     "FIVA (or ELFI/ELVA) multi-way valve"
+    ]
+   ],
+   "loc": "Manoeuvring side, at the cylinder-frame level.",
+   "ops": [
+    "Per-HCU leakage alarms: check the fuel HP pipe leak drain and the hydraulic connections.",
+    "Accumulator nitrogen pre-charge is checked at maker intervals; a flat accumulator shows up as servo-oil pressure pulsations."
+   ],
+   "conf": "published",
+   "deep": [
+    "The accumulators on the distributor block supply the peak servo-oil flow during the injection sequence, so the HPS pumps only need to cover the average flow.",
+    "On ME-C engines a single proportional FIVA valve controls both the fuel booster and the exhaust-valve actuator; older ME designs used separate ELFI (fuel) and ELVA (exhaust) valves."
+   ],
+   "src": [
+    "man_pg"
+   ]
+  },
+  {
+   "id": "me_booster",
+   "sys": "engine",
+   "name": "Fuel-oil pressure booster",
+   "match": [
+    "fuel_oil_pressure_booster"
+   ],
+   "fn": "A hydraulic piston driven by servo oil pushes a smaller plunger, raising fuel from about 10 bar supply to injection pressure. It replaces the camshaft-driven fuel pump.",
+   "spec": [
+    [
+     "Output",
+     "≈ 600–1,000 bar (load dependent)"
+    ],
+    [
+     "Number",
+     "One per cylinder, on the HCU"
+    ],
+    [
+     "Control",
+     "FIVA (or ELFI) valve, commanded by the CCU"
+    ]
+   ],
+   "loc": "On each HCU.",
+   "ops": [
+    "High-pressure leak detection at the booster top."
+   ],
+   "conf": "published",
+   "src": [
+    "man_pg"
+   ]
+  },
+  {
+   "id": "me_fiva",
+   "sys": "engine",
+   "name": "FIVA valve",
+   "match": [
+    "fiva_valve"
+   ],
+   "fn": "Proportional electro-hydraulic valve that controls servo oil to both the fuel booster and the exhaust-valve actuator.",
+   "spec": [
+    [
+     "Command",
+     "Cylinder Control Unit (CCU)"
+    ]
+   ],
+   "loc": "On each HCU.",
+   "ops": [
+    "Faults give untimed injection or exhaust-valve motion: check feedback sensor and MOP alarms."
+   ],
+   "conf": "published",
+   "src": [
+    "man_pg"
+   ]
+  },
+  {
+   "id": "me_staybolts",
+   "sys": "engine",
+   "name": "Staybolts (tie rods)",
+   "match": [
+    "staybolts",
+    "staybolt",
+    "staybolt_nut"
+   ],
+   "fn": "Long bolts running from the bedplate up through the frame box to the top of the cylinder frame. They are pre-tensioned hydraulically and clamp the three main structures together, so the welded joints are not loaded in tension by the firing forces.",
+   "spec": [
+    [
+     "Per bearing",
+     "2 (one each side)"
+    ],
+    [
+     "Tightening",
+     "Hydraulic jack to specified pressure"
+    ]
+   ],
+   "loc": "Beside every main bearing, full engine height.",
+   "ops": [
+    "Check pre-tension at maker intervals; a slack staybolt allows fretting and fatigue cracks at the frame box."
+   ],
+   "conf": "typical"
+  },
+  {
+   "id": "me_omd",
+   "sys": "engine",
+   "name": "Oil mist detector",
+   "match": [
+    "oil_mist_detector",
+    "oil_mist_sampling_pipe"
+   ],
+   "fn": "Continuously draws samples from each crankcase compartment and measures oil-mist density. High oil mist comes before a crankcase explosion, so an alarm triggers an automatic slowdown.",
+   "spec": [
+    [
+     "Rule",
+     "SOLAS II-1/47, IACS UR M67 (engines ≥ 2,250 kW)"
+    ]
+   ],
+   "loc": "Manoeuvring side of the frame box.",
+   "ops": [
+    "Never open the crankcase after an OMD alarm until the engine has cooled.",
+    "Test the OMD alarm function weekly."
+   ],
+   "conf": "published"
+  },
+  {
+   "id": "me_fuel_rails",
+   "sys": "engine",
+   "name": "Fuel-oil inlet & return rails",
+   "match": [
+    "fuel_oil_rails",
+    "fuel_oil_inlet_rail",
+    "fuel_oil_return_rail"
+   ],
+   "fn": "Low-pressure fuel supply (≈ 7–8 bar) along the engine to each fuel booster, and the return to the mixing tank.",
+   "spec": [
+    [
+     "Tracing",
+     "Steam/electric tracing for HFO"
+    ]
+   ],
+   "loc": "Manoeuvring side, HCU level.",
+   "ops": [
+    "Keep tracing on so HFO does not solidify at stops."
+   ],
+   "conf": "typical",
+   "diagram": "fo"
+  },
+  {
+   "id": "me_hp_pipes",
+   "sys": "engine",
+   "name": "High-pressure fuel & hydraulic pipes",
+   "match": [
+    "hcu_hp_fuel_pipe",
+    "hcu_exhaust_valve_hydraulic_pipe",
+    "hydraulic_oil_supply_rail"
+   ],
+   "fn": "High-pressure pipes of the ME system: the servo-oil supply rail from the HPS along the engine to every HCU, the fuel pipes from each booster to the fuel valves, and the hydraulic pipes to the exhaust-valve actuators.",
+   "spec": [
+    [
+     "Servo-oil rail and hydraulic pipes",
+     "Single-wall, 300 bar"
+    ],
+    [
+     "Fuel HP pipes",
+     "Double-wall with built-in conical support; insulated, not heated"
+    ]
+   ],
+   "loc": "Manoeuvring side, up to the cylinder cover.",
+   "ops": [
+    "A leak from the inner fuel pipe drains to the outer jacket and trips a leakage alarm (SOLAS II-2/4 jacketed HP fuel lines).",
+    "Never re-use conical pipe seats that show fretting marks."
+   ],
+   "conf": "published"
+  },
+  {
+   "id": "me_hps",
+   "sys": "engine",
+   "name": "Hydraulic power supply (HPS)",
+   "match": [
+    "hydraulic_power_supply",
+    "hps_pump",
+    "hps_filter_6um",
+    "hydraulic_oil_supply_rail",
+    "hps_drive_gear"
+   ],
+   "fn": "Takes filtered system oil, pressurises it to 300 bar and supplies it as servo (hydraulic) oil to every HCU through the hydraulic rail. On engines of 8 cylinders or fewer, the mechanically driven pumps are mounted at the aft end and driven from the crankshaft through a step-up gear.",
+   "spec": [
+    [
+     "Servo pressure",
+     "300 bar"
+    ],
+    [
+     "Filter",
+     "Self-cleaning, fine mesh (≈ 6 µm typ.)"
+    ],
+    [
+     "Drive",
+     "Crankshaft step-up gear (aft) + electric start-up pumps"
+    ]
+   ],
+   "loc": "Aft end of the engine, manoeuvring side (mechanically driven HPS on an engine with chain drive aft).",
+   "ops": [
+    "Electric start-up pumps give pressure before starting; engine-driven pumps take over once running.",
+    "Watch filter differential pressure and the back-flushing frequency; a rising rate points to contaminated system oil.",
+    "Low servo-oil pressure triggers slowdown / shutdown via the ECS."
+   ],
+   "conf": "published",
+   "diagram": "lo",
+   "deep": [
+    "Three configurations exist: engine-driven main pumps with electric start-up pumps (this model), electrically driven combined main/start-up pumps (usually mounted aft), or a combined engine-driven set with electric back-up capacity (option).",
+    "On engines with 9 or more cylinders the chain drive and the mechanically driven HPS sit in the middle of the engine instead of at the aft end.",
+    "Single-wall hydraulic piping was introduced together with the 300 bar systems. The fuel high-pressure pipes stay double-walled.",
+    "The electric start-up pumps build servo-oil pressure before the engine turns, so the HCUs can open exhaust valves and inject fuel on the very first revolution."
+   ],
+   "src": [
+    "man_pg"
+   ]
+  },
+  {
+   "id": "me_scav_receiver",
+   "sys": "engine",
+   "name": "Scavenge air receiver",
+   "match": [
+    "scavenge_air_receiver",
+    "scavenge_air_non_return_flaps",
+    "scavenge_air_receiver_support"
+   ],
+   "fn": "Large pipe along the engine that feeds cooled charge air to every scavenge box through non-return flaps.",
+   "spec": [
+    [
+     "Pressure",
+     "up to ≈ 4.5 bar (typ.)"
+    ],
+    [
+     "Shape",
+     "D-shaped"
+    ]
+   ],
+   "loc": "Exhaust side, below the exhaust receiver.",
+   "ops": [
+    "Drain condensate (water mist catcher) regularly."
+   ],
+   "conf": "typical",
+   "diagram": "air",
+   "src": [
+    "man_pg"
+   ]
+  },
+  {
+   "id": "me_aux_blower",
+   "sys": "engine",
+   "name": "Auxiliary blowers",
+   "match": [
+    "/^auxiliary_blower/",
+    "auxiliary_blower"
+   ],
+   "fn": "Electrically driven blowers integrated in the scavenge air cooler. They draw from the space after the cooler and push air into the receiver; non-return flaps between cooler and receiver close automatically while the blowers run.",
+   "spec": [
+    [
+     "Operation",
+     "Start one after another before engine start; cut out as the TC takes over (≈ 25–35 % load typ.)"
+    ],
+    [
+     "Number",
+     "2"
+    ]
+   ],
+   "loc": "On the scavenge air receiver.",
+   "ops": [
+    "The engine cannot start without the aux blowers running."
+   ],
+   "conf": "published",
+   "diagram": "air",
+   "deep": [
+    "A safe start needs enough scavenge-air pressure, so the ECS will not admit starting air until the blowers are running.",
+    "Blowers cutting in and out repeatedly at one load (“hunting”) is normally set right by adjusting the cut-in/cut-out hysteresis on the MOP."
+   ],
+   "src": [
+    "man_pg"
+   ]
+  },
+  {
+   "id": "me_exh_receiver",
+   "sys": "engine",
+   "name": "Exhaust gas receiver",
+   "match": [
+    "exhaust_gas_receiver",
+    "exhaust_receiver_to_tc",
+    "exhaust_expansion_bellows",
+    "exhaust_receiver_cladding_band",
+    "exhaust_gas_receiver_support"
+   ],
+   "fn": "Insulated manifold that collects exhaust pulses from each cylinder and delivers a steady flow to the turbocharger (constant-pressure turbocharging).",
+   "spec": [
+    [
+     "Temperature",
+     "≈ 350–450 °C (typ.)"
+    ],
+    [
+     "Insulation",
+     "Covered with galvanised steel plating"
+    ]
+   ],
+   "loc": "Exhaust side, top of the engine.",
+   "ops": [
+    "Insulation must be intact (SOLAS: surfaces > 220 °C must be insulated)."
+   ],
+   "conf": "typical",
+   "diagram": "air",
+   "src": [
+    "man_pg"
+   ]
+  },
+  {
+   "id": "me_tc",
+   "sys": "engine",
+   "name": "Turbocharger",
+   "match": [
+    "turbocharger",
+    "tc_turbine_casing",
+    "tc_bearing_housing",
+    "tc_compressor_casing",
+    "tc_air_intake_filter_silencer",
+    "tc_exhaust_outlet",
+    "tc_nozzle_ring",
+    "tc_diffuser",
+    "tc_casing_flange",
+    "tc_lo_pipe",
+    "tc_turbine_gas_inlet_volute",
+    "tc_support_foot"
+   ],
+   "fn": "Exhaust-driven turbine on a common shaft with a centrifugal compressor. It supplies all charge air above low load.",
+   "spec": [
+    [
+     "7 cyl options (L1)",
+     "1 × MAN TCA77, ABB A180-L or MHI MET83MB"
+    ],
+    [
+     "Number",
+     "1 (standard); one more possible on request"
+    ],
+    [
+     "Lubrication",
+     "From main system oil (typ.)"
+    ]
+   ],
+   "loc": "Aft end, exhaust side, in this model. The standard G60ME-C9.5 cross-section shows the turbocharger on the exhaust side; aft-end mounting is an alternative.",
+   "ops": [
+    "Water-wash the compressor and turbine side at intervals.",
+    "Watch for surging and high exhaust temperature before TC."
+   ],
+   "conf": "published",
+   "diagram": "air",
+   "deep": [
+    "Constant-pressure turbocharging: the exhaust receiver equalises the pulses from each cylinder, so the turbine sees steady flow. A protective grating sits between receiver and turbine.",
+    "Compensators (bellows) are fitted between exhaust valves and receiver, and between receiver and turbocharger.",
+    "With a turbocharger failure, an optional total-bypass flange on the receiver lets the engine run at reduced load (emergency running).",
+    "Arctic running: below about 10 °C intake air, a variable exhaust bypass can be used to stop over-high scavenge and firing pressures."
+   ],
+   "src": [
+    "man_pg"
+   ]
+  },
+  {
+   "id": "me_tc_rotor",
+   "sys": "engine",
+   "name": "Turbocharger rotor",
+   "match": [
+    "tc_rotor",
+    "tc_rotor_shaft",
+    "tc_turbine_wheel",
+    "tc_compressor_impeller"
+   ],
+   "fn": "Turbine wheel and compressor impeller on one shaft, in plain bearings.",
+   "spec": [
+    [
+     "Speed",
+     "≈ 10,000–15,000 r/min (typ.)"
+    ]
+   ],
+   "loc": "Inside the turbocharger casing.",
+   "ops": [
+    "Log TC rpm against engine load; vibration or a drop in rpm means fouling or bearing damage."
+   ],
+   "conf": "typical"
+  },
+  {
+   "id": "me_air_cooler",
+   "sys": "engine",
+   "name": "Scavenge air cooler & water mist catcher",
+   "match": [
+    "scavenge_air_cooler",
+    "air_cooler_tube_stack",
+    "air_cooler_fins",
+    "air_cooler_water_box",
+    "water_mist_catcher",
+    "tc_air_outlet_duct"
+   ],
+   "fn": "Finned-tube cooler (LT fresh water) reduces charge-air temperature after the compressor. The mist catcher removes condensed water.",
+   "spec": [
+    [
+     "Type",
+     "Mono-block, one per turbocharger"
+    ],
+    [
+     "Cooling",
+     "LT central fresh water (most common)"
+    ],
+    [
+     "Water pressure",
+     "up to 4.5 bar"
+    ],
+    [
+     "Approach",
+     "Scavenge air ≈ 12 °C above water inlet at SMCR"
+    ],
+    [
+     "Air outlet",
+     "≈ 35–45 °C (typ.)"
+    ]
+   ],
+   "loc": "Below the turbocharger, exhaust side.",
+   "ops": [
+    "Monitor air-side pressure drop and clean when it rises.",
+    "Drain condensate so water is not carried into the cylinders."
+   ],
+   "conf": "published",
+   "diagram": "air",
+   "deep": [
+    "Colder cooling water means lower SFOC: running with 36 °C instead of 10 °C to the air cooler costs about 2 g/kWh.",
+    "The same colder water condenses more moisture out of the air. The water mist catcher must remove it, which also lowers the risk of acid condensing on the liner.",
+    "Per 10 °C rise in scavenge-air coolant temperature, SFOC rises about 0.41 % with Pmax re-adjusted and 0.60 % without."
+   ],
+   "src": [
+    "man_pg"
+   ]
+  },
+  {
+   "id": "me_combustion",
+   "sys": "engine",
+   "name": "Combustion (animation)",
+   "match": [
+    "combustion_flash"
+   ],
+   "fn": "Shows the injection and burn phase near TDC. On a 7-cylinder engine a cylinder fires every ≈ 51.4° of crank rotation.",
+   "spec": [
+    [
+     "Firing order",
+     "1-7-2-5-4-3-6 (typ.)"
+    ]
+   ],
+   "loc": "Combustion chamber between crown and cover.",
+   "ops": [
+    "Use PMI readings (Pmax, Pcomp) to balance cylinders."
+   ],
+   "conf": "typical"
+  },
+  {
+   "id": "me_gallery",
+   "sys": "engine",
+   "name": "Engine galleries",
+   "match": [
+    "engine_gallery",
+    "engine_gallery_platform",
+    "gallery_handrail",
+    "engine_ladder",
+    "engine_room_floor_plates",
+    "gallery_bracket",
+    "gallery_toe_plate"
+   ],
+   "fn": "Platforms for access to the HCUs, cylinder covers and turbocharger.",
+   "spec": [],
+   "loc": "Manoeuvring side and top of the engine.",
+   "ops": [
+    "Keep clear of hot exhaust surfaces; use the safety harness when working over open parts."
+   ],
+   "conf": "typical"
+  },
+  {
+   "id": "me_ecu",
+   "sys": "engine",
+   "name": "Engine control units (ECS)",
+   "match": [
+    "engine_control_unit_cabinet",
+    "local_instrument_panel",
+    "pressure_gauges",
+    "cable_trays",
+    "exhaust_temperature_sensor",
+    "jacket_temperature_sensor"
+   ],
+   "fn": "Engine control system cabinets: EICU (interface), ECU (engine control), ACU (auxiliaries) and one CCU per cylinder. Operators use the MOP touch panels.",
+   "spec": [
+    [
+     "Network",
+     "Redundant"
+    ],
+    [
+     "HMI",
+     "MOP-A / MOP-B"
+    ]
+   ],
+   "loc": "Near the engine and in the ECR.",
+   "ops": [
+    "Keep the MOP alarm log; software version per MAN service letters."
+   ],
+   "conf": "typical"
+  },
+  {
+   "id": "shaft_line",
+   "sys": "propulsion",
+   "name": "Intermediate shaft & coupling",
+   "match": [
+    "intermediate_shaft",
+    "shaft_coupling_flange",
+    "shaft_line"
+   ],
+   "fn": "Transmits torque from the engine thrust shaft to the propeller shaft.",
+   "spec": [
+    [
+     "Supports",
+     "2 intermediate bearings (model)"
+    ]
+   ],
+   "loc": "Between the engine and the stern tube.",
+   "ops": [
+    "Check coupling bolts; keep the shaft guard fitted."
+   ],
+   "conf": "estimated"
+  },
+  {
+   "id": "int_bearing",
+   "sys": "propulsion",
+   "name": "Intermediate shaft bearings",
+   "match": [
+    "intermediate_shaft_bearing",
+    "bearing_seat"
+   ],
+   "fn": "Oil-bath plain bearings supporting the intermediate shaft.",
+   "spec": [
+    [
+     "Lubrication",
+     "Self-contained oil bath with disc"
+    ]
+   ],
+   "loc": "Engine room, shaft line.",
+   "ops": [
+    "Log bearing temperatures each watch; check the oil level."
+   ],
+   "conf": "typical"
+  },
+  {
+   "id": "stern_tube",
+   "sys": "propulsion",
+   "name": "Stern tube, seals & propeller shaft",
+   "match": [
+    "stern_tube_bossing",
+    "stern_tube_forward_seal",
+    "propeller_shaft_in_stern_tube"
+   ],
+   "fn": "Oil-lubricated stern-tube bearings carry the propeller shaft through the hull. Lip seals at each end keep seawater out and oil in.",
+   "spec": [
+    [
+     "Lubricant",
+     "EAL (environmentally acceptable lubricant) where required (US VGP)"
+    ]
+   ],
+   "loc": "Aft peak region, through the stern.",
+   "ops": [
+    "Monitor stern-tube bearing temperature and oil header-tank level.",
+    "Measure weardown (poker gauge) at drydock."
+   ],
+   "conf": "typical"
+  },
+  {
+   "id": "propeller",
+   "sys": "propulsion",
+   "name": "Propeller (fixed pitch)",
+   "match": [
+    "propeller_fpp_5_blade",
+    "propeller_hub",
+    "propeller_cap",
+    "/^propeller_blade_/"
+   ],
+   "fn": "Fixed-pitch, 5-blade, skewed propeller in nickel-aluminium bronze. The engine is reversed to go astern.",
+   "spec": [
+    [
+     "Blades",
+     "5 (est.)"
+    ],
+    [
+     "Diameter",
+     "≈ 6.6 m (est.)"
+    ],
+    [
+     "Material",
+     "NiAl-bronze"
+    ]
+   ],
+   "loc": "Aft of the stern tube.",
+   "ops": [
+    "Polish the blades to keep efficiency; check for cavitation erosion and bent tips."
+   ],
+   "conf": "estimated"
+  },
+  {
+   "id": "rudder",
+   "sys": "propulsion",
+   "name": "Spade rudder & costa bulb",
+   "match": [
+    "spade_rudder",
+    "rudder_blade",
+    "rudder_costa_bulb"
+   ],
+   "fn": "Semi-balanced/spade rudder with a streamlined section. The costa bulb in line with the shaft improves flow and efficiency.",
+   "spec": [
+    [
+     "Section",
+     "NACA-type (model)"
+    ],
+    [
+     "Height",
+     "≈ 8.3 m (est.)"
+    ]
+   ],
+   "loc": "Aft of the propeller.",
+   "ops": [
+    "Check the jumping stopper and rudder carrier clearances at drydock."
+   ],
+   "conf": "estimated"
+  },
+  {
+   "id": "rudder_stock",
+   "sys": "propulsion",
+   "name": "Rudder stock",
+   "match": [
+    "rudder_stock"
+   ],
+   "fn": "Transmits the steering-gear torque to the rudder blade.",
+   "spec": [],
+   "loc": "Through the rudder trunk into the steering-gear room.",
+   "ops": [
+    "Check the stock seal and bearing wear-down."
+   ],
+   "conf": "typical"
+  },
+  {
+   "id": "anodes",
+   "sys": "propulsion",
+   "name": "Sacrificial anodes",
+   "match": [
+    "rudder_zinc_anode"
+   ],
+   "fn": "Zinc/aluminium anodes that protect steel near the bronze propeller from galvanic corrosion.",
+   "spec": [],
+   "loc": "Rudder, stern frame and sea chests.",
+   "ops": [
+    "Renew at drydock when 50% consumed."
+   ],
+   "conf": "typical"
+  },
+  {
+   "id": "steering_gear",
+   "sys": "propulsion",
+   "name": "Steering gear (rotary vane)",
+   "match": [
+    "steering_gear_rotary_vane"
+   ],
+   "fn": "Electro-hydraulic rotary-vane actuator on the rudder stock with two power units.",
+   "spec": [
+    [
+     "SOLAS II-1/29",
+     "35° one side to 30° other side in ≤ 28 s"
+    ],
+    [
+     "Power units",
+     "2 independent"
+    ]
+   ],
+   "loc": "Steering-gear room, above the rudder.",
+   "ops": [
+    "Test within 12 h before departure; emergency steering drill every 3 months.",
+    "Keep the changeover procedure and block diagram posted."
+   ],
+   "conf": "published",
+   "deep": [
+    "Main steering gear: 35° one side to 35° the other at deepest draught and full ahead service speed, and 35° to 30° in not more than 28 s.",
+    "Auxiliary steering gear must manage 15° to 15° in 60 s at half speed or 7 knots, whichever is greater.",
+    "Emergency steering drills are held at least every 3 months."
+   ],
+   "src": [
+    "solas"
+   ]
+  },
+  {
+   "id": "bow_thruster",
+   "sys": "propulsion",
+   "name": "Bow thruster",
+   "match": [
+    "bow_thruster"
+   ],
+   "fn": "Electric-driven tunnel thruster with a controllable-pitch propeller, used for berthing without tugs.",
+   "spec": [
+    [
+     "Power",
+     "≈ 1,000–1,500 kW (est.)"
+    ],
+    [
+     "Type",
+     "CPP tunnel"
+    ]
+   ],
+   "loc": "Forward, below the waterline.",
+   "ops": [
+    "Needs generator capacity: start the stand-by DG before use."
+   ],
+   "conf": "estimated"
+  },
+  {
+   "id": "dg",
+   "sys": "aux",
+   "name": "Diesel generators",
+   "match": [
+    "/^diesel_generator_\\d$/"
+   ],
+   "fn": "Four-stroke medium-speed engines driving alternators. They supply all electrical power at sea and in port.",
+   "spec": [
+    [
+     "Number",
+     "3 (model)"
+    ],
+    [
+     "Output",
+     "≈ 1,200–1,800 kWe each (est.)"
+    ],
+    [
+     "Voltage",
+     "450 V, 60 Hz (typ.)"
+    ]
+   ],
+   "loc": "Engine room second deck.",
+   "ops": [
+    "Load-share automatically through the power management system (PMS).",
+    "Run hours: plan overhauls (every 12,000–24,000 h)."
+   ],
+   "conf": "estimated",
+   "diagram": "el"
+  },
+  {
+   "id": "boiler",
+   "sys": "aux",
+   "name": "Auxiliary boiler",
+   "match": [
+    "auxiliary_boiler"
+   ],
+   "fn": "Oil-fired boiler producing steam for fuel heating and accommodation heating in port.",
+   "spec": [
+    [
+     "Pressure",
+     "≈ 7 bar (typ.)"
+    ]
+   ],
+   "loc": "Engine room, upper level.",
+   "ops": [
+    "Test safety valves and water-level trips; treat boiler water."
+   ],
+   "conf": "typical"
+  },
+  {
+   "id": "egb",
+   "sys": "aux",
+   "name": "Exhaust gas economiser & uptakes",
+   "match": [
+    "exhaust_gas_economiser",
+    "main_engine_uptake",
+    "exhaust_uptake_vertical",
+    "exhaust_uptake_inclined",
+    "exhaust_uptake_to_funnel",
+    "aux_exhaust_pipe",
+    "boiler_uptake",
+    "boiler_uptake_vertical"
+   ],
+   "fn": "Recovers heat from the main-engine exhaust to make steam at sea.",
+   "spec": [
+    [
+     "Risk",
+     "Soot fires if not soot-blown"
+    ]
+   ],
+   "loc": "Funnel casing above the engine room.",
+   "ops": [
+    "Soot-blow daily; keep water circulation running while hot."
+   ],
+   "conf": "typical",
+   "diagram": "air"
+  },
+  {
+   "id": "silencer",
+   "sys": "aux",
+   "name": "Exhaust silencer",
+   "match": [
+    "exhaust_silencer"
+   ],
+   "fn": "Reduces exhaust noise before the funnel.",
+   "spec": [],
+   "loc": "Funnel casing.",
+   "ops": [],
+   "conf": "typical"
+  },
+  {
+   "id": "fo_purifier",
+   "sys": "aux",
+   "name": "HFO purifiers",
+   "match": [
+    "/^fuel_oil_purifier_\\d$/"
+   ],
+   "fn": "Centrifugal separators that remove water and catalytic fines from heated fuel before it reaches the service tank.",
+   "spec": [
+    [
+     "Temp.",
+     "≈ 98 °C for HFO (typ.)"
+    ],
+    [
+     "Cat-fines at engine",
+     "≤ 10–15 ppm Al+Si (typ. maker target)"
+    ]
+   ],
+   "loc": "Purifier area, second deck.",
+   "ops": [
+    "Clean bowls regularly; check gravity disc/sludge discharge."
+   ],
+   "conf": "typical",
+   "diagram": "fo"
+  },
+  {
+   "id": "lo_purifier",
+   "sys": "aux",
+   "name": "LO purifier",
+   "match": [
+    "lo_purifier"
+   ],
+   "fn": "Continuously cleans main-engine system oil from the sump tank.",
+   "spec": [],
+   "loc": "Purifier area.",
+   "ops": [
+    "Run continuously at sea; check for water in oil."
+   ],
+   "conf": "typical",
+   "diagram": "lo"
+  },
+  {
+   "id": "fo_module",
+   "sys": "aux",
+   "name": "Fuel supply & booster module",
+   "match": [
+    "fo_supply_booster_module"
+   ],
+   "fn": "Skid with supply pumps, flowmeter, mixing (venting) tank, booster pumps, heaters, viscosity controller and fine filter.",
+   "spec": [
+    [
+     "Supply",
+     "≈ 4 bar"
+    ],
+    [
+     "Booster",
+     "≈ 7–8 bar at engine"
+    ],
+    [
+     "Viscosity",
+     "10–15 cSt at injection (typ.)"
+    ]
+   ],
+   "loc": "Engine room second deck.",
+   "ops": [
+    "Keep fuel viscosity within limits; heaters are controlled by the viscosimeter."
+   ],
+   "conf": "typical",
+   "diagram": "fo"
+  },
+  {
+   "id": "air_receiver",
+   "sys": "aux",
+   "name": "Starting air receivers",
+   "match": [
+    "/^starting_air_receiver_\\d$/"
+   ],
+   "fn": "Store compressed air for engine starting.",
+   "spec": [
+    [
+     "Pressure",
+     "30 bar"
+    ],
+    [
+     "Capacity rule",
+     "≥ 12 consecutive starts (reversible engine)"
+    ]
+   ],
+   "loc": "Engine room second deck.",
+   "ops": [
+    "Drain water each watch; test safety valves."
+   ],
+   "conf": "published",
+   "diagram": "sa"
+  },
+  {
+   "id": "compressor",
+   "sys": "aux",
+   "name": "Main air compressors",
+   "match": [
+    "/^main_air_compressor_\\d$/"
+   ],
+   "fn": "Two-stage reciprocating compressors that charge the starting-air receivers.",
+   "spec": [
+    [
+     "Number",
+     "2"
+    ],
+    [
+     "Output",
+     "30 bar"
+    ]
+   ],
+   "loc": "Engine room second deck.",
+   "ops": [
+    "Drain intercoolers; check valves at intervals."
+   ],
+   "conf": "typical",
+   "diagram": "sa"
+  },
+  {
+   "id": "sw_pump",
+   "sys": "aux",
+   "name": "Sea-water cooling pumps",
+   "match": [
+    "/^sea_water_cooling_pump_\\d$/"
+   ],
+   "fn": "Circulate sea water through the central coolers.",
+   "spec": [
+    [
+     "Number",
+     "2 (1 stand-by)"
+    ]
+   ],
+   "loc": "Tank top.",
+   "ops": [
+    "Also serve as emergency bilge suction in some layouts."
+   ],
+   "conf": "typical",
+   "diagram": "cw"
+  },
+  {
+   "id": "central_cooler",
+   "sys": "aux",
+   "name": "Central coolers (plate type)",
+   "match": [
+    "central_cooler_plate_hx"
+   ],
+   "fn": "Titanium plate heat exchangers where sea water cools the LT fresh-water circuit.",
+   "spec": [
+    [
+     "Plates",
+     "Titanium"
+    ]
+   ],
+   "loc": "Tank top.",
+   "ops": [
+    "Back-flush or open for cleaning when ΔT falls."
+   ],
+   "conf": "typical",
+   "diagram": "cw"
+  },
+  {
+   "id": "lt_pump",
+   "sys": "aux",
+   "name": "LT fresh-water pumps",
+   "match": [
+    "/^lt_fw_pump_\\d$/"
+   ],
+   "fn": "Circulate LT fresh water through the central coolers and consumers.",
+   "spec": [
+    [
+     "Number",
+     "2"
+    ]
+   ],
+   "loc": "Tank top.",
+   "ops": [],
+   "conf": "typical",
+   "diagram": "cw"
+  },
+  {
+   "id": "jw_pump",
+   "sys": "aux",
+   "name": "Jacket (HT) water pumps",
+   "match": [
+    "/^jacket_water_pump_\\d$/"
+   ],
+   "fn": "Circulate HT fresh water through the cylinder jackets and covers.",
+   "spec": [
+    [
+     "Number",
+     "2"
+    ]
+   ],
+   "loc": "Tank top.",
+   "ops": [
+    "Preheat the jacket water to ≥ 50 °C before starting the engine (typ.)."
+   ],
+   "conf": "typical",
+   "diagram": "cw"
+  },
+  {
+   "id": "lo_pump",
+   "sys": "aux",
+   "name": "Main LO pumps",
+   "match": [
+    "/^main_lo_pump_\\d$/"
+   ],
+   "fn": "Draw from the sump tank and supply the main-engine bearings, crossheads, piston cooling and HPS.",
+   "spec": [
+    [
+     "Number",
+     "2 (1 stand-by, auto change-over)"
+    ]
+   ],
+   "loc": "Tank top.",
+   "ops": [
+    "Stand-by pump auto-start on low pressure."
+   ],
+   "conf": "typical",
+   "diagram": "lo"
+  },
+  {
+   "id": "lo_cooler",
+   "sys": "aux",
+   "name": "Main LO cooler",
+   "match": [
+    "main_lo_cooler"
+   ],
+   "fn": "Plate cooler (LT FW) with a 3-way thermostatic valve controlling LO temperature.",
+   "spec": [
+    [
+     "LO inlet",
+     "≈ 45 °C (typ.)"
+    ]
+   ],
+   "loc": "Tank top.",
+   "ops": [],
+   "conf": "typical",
+   "diagram": "lo"
+  },
+  {
+   "id": "lo_filter",
+   "sys": "aux",
+   "name": "LO auto back-flush filter",
+   "match": [
+    "lo_auto_backwash_filter"
+   ],
+   "fn": "Automatic self-cleaning full-flow filter before the engine inlet.",
+   "spec": [
+    [
+     "Mesh",
+     "≈ 25–40 µm (typ.)"
+    ]
+   ],
+   "loc": "Tank top.",
+   "ops": [
+    "High ΔP or frequent flushing shows contamination."
+   ],
+   "conf": "typical",
+   "diagram": "lo"
+  },
+  {
+   "id": "ballast_pump",
+   "sys": "aux",
+   "name": "Ballast pumps",
+   "match": [
+    "/^ballast_pump_\\d$/"
+   ],
+   "fn": "Centrifugal pumps that fill and empty ballast tanks via the BWMS and the ballast main.",
+   "spec": [
+    [
+     "Number",
+     "2"
+    ]
+   ],
+   "loc": "Tank top.",
+   "ops": [],
+   "conf": "typical",
+   "diagram": "bb"
+  },
+  {
+   "id": "fire_pump",
+   "sys": "aux",
+   "name": "Fire & general-service pump",
+   "match": [
+    "fire_gs_pump"
+   ],
+   "fn": "Supplies the fire main; also used for deck washing and general service.",
+   "spec": [
+    [
+     "Rule",
+     "≥ 2 independent fire pumps (SOLAS II-2/10)"
+    ]
+   ],
+   "loc": "Tank top.",
+   "ops": [],
+   "conf": "typical"
+  },
+  {
+   "id": "bilge_pump",
+   "sys": "aux",
+   "name": "Bilge pump",
+   "match": [
+    "bilge_pump"
+   ],
+   "fn": "Removes water from bilge wells in holds and machinery spaces.",
+   "spec": [],
+   "loc": "Tank top.",
+   "ops": [
+    "Oily bilge goes via the bilge holding tank and OWS: never pump oily water directly overboard."
+   ],
+   "conf": "typical",
+   "diagram": "bb"
+  },
+  {
+   "id": "bwts",
+   "sys": "aux",
+   "name": "Ballast water treatment system",
+   "match": [
+    "ballast_water_treatment_system",
+    "bwts_filter",
+    "bwts_uv_reactor",
+    "bwts_control_panel"
+   ],
+   "fn": "Filter + UV reactor (model) that treat ballast water to the IMO D-2 discharge standard.",
+   "spec": [
+    [
+     "Standard",
+     "BWM Convention D-2"
+    ],
+    [
+     "Type",
+     "Filtration + UV (est.)"
+    ]
+   ],
+   "loc": "Engine room second deck.",
+   "ops": [
+    "UV lamp intensity and filter back-flush must be monitored; log all operations."
+   ],
+   "conf": "estimated",
+   "diagram": "bb",
+   "deep": [
+    "D-2 discharge standard: fewer than 10 viable organisms per m³ ≥ 50 µm, fewer than 10 per mL between 10 and 50 µm, plus limits on indicator microbes (toxicogenic Vibrio cholerae, E. coli, intestinal Enterococci).",
+    "UV systems need adequate UV transmittance; in turbid or muddy water the flow may have to be reduced to keep the dose."
+   ],
+   "src": [
+    "bwm"
+   ]
+  },
+  {
+   "id": "ows",
+   "sys": "aux",
+   "name": "Oily water separator",
+   "match": [
+    "oily_water_separator",
+    "ows_separator",
+    "ows_15ppm_monitor"
+   ],
+   "fn": "Separates oil from bilge water before discharge; the 15 ppm monitor stops discharge automatically.",
+   "spec": [
+    [
+     "Limit",
+     "15 ppm (MARPOL I/14)"
+    ]
+   ],
+   "loc": "Engine room second deck.",
+   "ops": [
+    "Discharge only en route, outside special areas as allowed; record in the ORB."
+   ],
+   "conf": "published",
+   "diagram": "bb",
+   "deep": [
+    "The 15 ppm bilge alarm must record date, time, alarm status and operating status, and keep the record for at least 18 months.",
+    "Every discharge, transfer or disposal is entered in the Oil Record Book Part I; a Port State inspector will compare it against the OCM record."
+   ],
+   "src": [
+    "marpol"
+   ]
+  },
+  {
+   "id": "sewage",
+   "sys": "aux",
+   "name": "Sewage treatment plant",
+   "match": [
+    "sewage_treatment_plant"
+   ],
+   "fn": "Biological/electrochemical treatment of black and grey water (MARPOL Annex IV).",
+   "spec": [],
+   "loc": "Engine room third deck.",
+   "ops": [],
+   "conf": "typical"
+  },
+  {
+   "id": "incinerator",
+   "sys": "aux",
+   "name": "Incinerator",
+   "match": [
+    "incinerator"
+   ],
+   "fn": "Burns sludge and permitted garbage (MARPOL Annex VI Reg. 16).",
+   "spec": [],
+   "loc": "Engine room third deck.",
+   "ops": [],
+   "conf": "typical"
+  },
+  {
+   "id": "fwg",
+   "sys": "aux",
+   "name": "Fresh water generator",
+   "match": [
+    "fresh_water_generator"
+   ],
+   "fn": "Vacuum evaporator heated by jacket water that makes fresh water from sea water at sea.",
+   "spec": [
+    [
+     "Heat source",
+     "HT jacket water ≈ 80 °C"
+    ]
+   ],
+   "loc": "Engine room second deck.",
+   "ops": [
+    "Do not operate within 20 nm of land (water quality)."
+   ],
+   "conf": "typical",
+   "diagram": "cw"
+  },
+  {
+   "id": "sea_chest",
+   "sys": "aux",
+   "name": "Sea chests (high & low)",
+   "match": [
+    "sea_chest_low_port",
+    "sea_chest_high_stbd"
+   ],
+   "fn": "Recesses in the hull with gratings where sea water is drawn in. The low chest is used at sea; the high chest in shallow water.",
+   "spec": [],
+   "loc": "Engine-room shell, both sides.",
+   "ops": [
+    "Clear strainers; check the gratings and anodes at drydock."
+   ],
+   "conf": "typical",
+   "diagram": "cw"
+  },
+  {
+   "id": "er_crane",
+   "sys": "aux",
+   "name": "Engine-room overhead crane",
+   "match": [
+    "er_overhead_crane"
+   ],
+   "fn": "Travelling crane above the main engine for lifting covers, pistons and exhaust valves.",
+   "spec": [
+    [
+     "Capacity",
+     "4.0 t for normal lifting procedure (MAN data for G60ME-C9.5)"
+    ],
+    [
+     "Min. hook height",
+     "H1 12,175 mm above crank ℄"
+    ]
+   ],
+   "loc": "Top of the engine casing.",
+   "ops": [],
+   "conf": "estimated"
+  },
+  {
+   "id": "er_valves",
+   "sys": "aux",
+   "name": "Valves & pipe flanges",
+   "match": [
+    "er_valves",
+    "isolating_valve",
+    "pipe_flange",
+    "valve_body",
+    "valve_handwheel"
+   ],
+   "fn": "Hand-operated isolating valves and bolted flanges on the ER pipe runs.",
+   "spec": [
+    [
+     "Colour code",
+     "Pipe colour to ISO 14726; handwheels red"
+    ]
+   ],
+   "loc": "Engine room pipe runs.",
+   "ops": [
+    "Remote-closing valves on fuel tanks must be tested (SOLAS II-2/4)."
+   ],
+   "conf": "typical"
+  },
+  {
+   "id": "er_vent",
+   "sys": "aux",
+   "name": "Engine-room ventilation fans",
+   "match": [
+    "er_ventilation",
+    "er_supply_fan",
+    "er_supply_duct"
+   ],
+   "fn": "Supply fans deliver combustion and cooling air to the engine room. They are stopped from outside the space before CO₂ release.",
+   "spec": [],
+   "loc": "Funnel casing (model).",
+   "ops": [],
+   "conf": "estimated"
+  },
+  {
+   "id": "er_decks",
+   "sys": "aux",
+   "name": "Engine-room flats & ladders",
+   "match": [
+    "er_tank_top",
+    "er_second_deck",
+    "er_third_deck",
+    "steering_gear_flat",
+    "er_ladder"
+   ],
+   "fn": "Platforms dividing the engine room into levels.",
+   "spec": [],
+   "loc": "Engine room.",
+   "ops": [],
+   "conf": "estimated"
+  },
+  {
+   "id": "efp",
+   "sys": "safety",
+   "name": "Emergency fire pump",
+   "match": [
+    "emergency_fire_pump"
+   ],
+   "fn": "Independent fire pump located outside the machinery space so the fire main can be pressurised if the engine room is lost.",
+   "spec": [
+    [
+     "Rule",
+     "SOLAS II-2/10.2.2.3"
+    ]
+   ],
+   "loc": "Steering-gear area (model).",
+   "ops": [
+    "Test weekly; check suction lift and priming."
+   ],
+   "conf": "estimated"
+  },
+  {
+   "id": "transformer",
+   "sys": "electrical",
+   "name": "Transformers 440/230 V",
+   "match": [
+    "transformer_440_230"
+   ],
+   "fn": "Step the main supply down for lighting and small services.",
+   "spec": [],
+   "loc": "Engine room near the ECR.",
+   "ops": [],
+   "conf": "typical",
+   "diagram": "el"
+  },
+  {
+   "id": "msb",
+   "sys": "electrical",
+   "name": "Main switchboard",
+   "match": [
+    "main_switchboard"
+   ],
+   "fn": "Distributes generator power; generator breakers, synchronising and preferential tripping.",
+   "spec": [
+    [
+     "Voltage",
+     "450 V (typ.)"
+    ]
+   ],
+   "loc": "Engine control room.",
+   "ops": [
+    "Insulation monitoring: investigate earth faults immediately."
+   ],
+   "conf": "typical",
+   "diagram": "el"
+  },
+  {
+   "id": "ecr",
+   "sys": "electrical",
+   "name": "Engine control room",
+   "match": [
+    "engine_control_room",
+    "ecr_room",
+    "ecr_window",
+    "engine_control_console"
+   ],
+   "fn": "Air-conditioned room with engine control console, alarm & monitoring system and the main switchboard.",
+   "spec": [],
+   "loc": "Engine room third deck.",
+   "ops": [],
+   "conf": "typical"
+  },
+  {
+   "id": "em_gen",
+   "sys": "electrical",
+   "name": "Emergency generator",
+   "match": [
+    "emergency_generator_set"
+   ],
+   "fn": "Automatic-start diesel generator outside the machinery space, above the bulkhead deck.",
+   "spec": [
+    [
+     "Rule",
+     "SOLAS II-1/43: on load within 45 s, 18 h supply (cargo ship)"
+    ]
+   ],
+   "loc": "Emergency generator room in the house (model).",
+   "ops": [
+    "Test weekly on load."
+   ],
+   "conf": "published",
+   "diagram": "el",
+   "deep": [
+    "For a cargo ship the emergency source must supply its listed consumers for 18 hours: emergency lighting, navigation lights, radio (GMDSS), fire detection, the emergency fire pump and steering gear (if supplied from it).",
+    "It starts automatically on loss of main power and must be on load within 45 s. Until then a transitional battery source covers the essential loads."
+   ],
+   "src": [
+    "solas"
+   ]
+  },
+  {
+   "id": "esb",
+   "sys": "electrical",
+   "name": "Emergency switchboard",
+   "match": [
+    "emergency_switchboard"
+   ],
+   "fn": "Feeds emergency lighting, steering gear (one unit), emergency fire pump, nav lights, GMDSS and fire detection.",
+   "spec": [],
+   "loc": "Next to the emergency generator.",
+   "ops": [],
+   "conf": "typical",
+   "diagram": "el"
+  },
+  {
+   "id": "shore",
+   "sys": "electrical",
+   "name": "Shore connection box",
+   "match": [
+    "shore_power_connection_box"
+   ],
+   "fn": "Terminal for shore power at the yard or in port.",
+   "spec": [],
+   "loc": "House side, main deck.",
+   "ops": [
+    "Check phase sequence before closing the shore breaker."
+   ],
+   "conf": "typical",
+   "diagram": "el"
+  },
+  {
+   "id": "hatch",
+   "sys": "cargo",
+   "name": "Hatch coamings & pontoon hatch covers",
+   "match": [
+    "/^hatch_\\d\\d/",
+    "hatch_coamings_and_covers"
+   ],
+   "fn": "Coamings frame each hatch opening and add to the hull girder. Lift-away pontoon covers are handled by the ship’s cranes or shore cranes; deck containers sit on the covers.",
+   "spec": [
+    [
+     "Bays",
+     "10 × 40′ (from profile)"
+    ],
+    [
+     "Covers",
+     "2–3 pontoons per bay (est.)"
+    ]
+   ],
+   "loc": "Every hatch along the cargo deck.",
+   "ops": [
+    "Check rubber packings, cleats and drain channels; hose-test for weathertightness."
+   ],
+   "conf": "estimated"
+  },
+  {
+   "id": "deck_stow",
+   "sys": "cargo",
+   "name": "Deck container stows",
+   "match": [
+    "/^deck_bay_\\d\\d_container/",
+    "/^deck_bay_\\d\\d_steel/",
+    "/^deck_bay_\\d\\d$/",
+    "deck_cargo",
+    "container_corner_castings",
+    "container_door_locking_bars",
+    "container_door_seam"
+   ],
+   "fn": "Containers on the hatch covers, lashed with twistlocks, lashing rods and turnbuckles. Stack height is limited by weight, the lashing, and the bridge-visibility rule (SOLAS V/22).",
+   "spec": [
+    [
+     "Rows",
+     "up to 14 (model)"
+    ],
+    [
+     "40′ box",
+     "12.192 × 2.438 × 2.591 m (HC 2.896 m)"
+    ],
+    [
+     "Reefer plugs",
+     "600 (published)"
+    ]
+   ],
+   "loc": "On all hatch covers.",
+   "ops": [
+    "Check the lashing plan in the loading computer; parametric rolling can overload lashings."
+   ],
+   "conf": "published"
+  },
+  {
+   "id": "stools",
+   "sys": "cargo",
+   "name": "Container stools & sockets",
+   "match": [
+    "/^deck_bay_\\d\\d_paint_hatch/",
+    "container_stool"
+   ],
+   "fn": "Raised foundations with twistlock sockets for the outer deck stacks beside the coamings.",
+   "spec": [],
+   "loc": "Deck, beside the coamings.",
+   "ops": [],
+   "conf": "typical"
+  },
+  {
+   "id": "hold_stow",
+   "sys": "cargo",
+   "name": "Hold containers",
+   "match": [
+    "/^hold_bay_\\d\\d_container/",
+    "/^hold_bay_\\d\\d$/",
+    "cargo_holds_internal"
+   ],
+   "fn": "Containers stowed in the cell guides without lashing; the stack narrows with the hull form.",
+   "spec": [],
+   "loc": "Holds 2–10.",
+   "ops": [
+    "Stack weight must not exceed the tank-top/corner-post limit."
+   ],
+   "conf": "typical"
+  },
+  {
+   "id": "cell_guides",
+   "sys": "cargo",
+   "name": "Cell guides",
+   "match": [
+    "/^hold_bay_\\d\\d_steel_galvanized$/",
+    "cell_guide"
+   ],
+   "fn": "Vertical angle-bar guides that hold container corners in the hold so no lashing is needed.",
+   "spec": [
+    [
+     "Clearance",
+     "≈ 25 mm per side (typ.)"
+    ]
+   ],
+   "loc": "Inside the holds, at every container corner.",
+   "ops": [
+    "Straighten bent guides; they cause loading delays and damage."
+   ],
+   "conf": "typical"
+  },
+  {
+   "id": "lashing_gear",
+   "sys": "cargo",
+   "name": "Lashing rods, turnbuckles & twistlocks",
+   "match": [
+    "lashing_gear",
+    "lashing_rods",
+    "turnbuckles"
+   ],
+   "fn": "Loose gear that secures the deck stacks. Lashing rods run from the lashing bridge to the corner castings of the 2nd/3rd tier and are tensioned by turnbuckles; twistlocks or midlocks lock the boxes to each other.",
+   "spec": [
+    [
+     "Rule",
+     "Cargo Securing Manual (SOLAS VI/5, CSS Code)"
+    ]
+   ],
+   "loc": "Between deck bays, at the lashing bridges.",
+   "ops": [
+    "Retighten turnbuckles after the first day at sea and before heavy weather.",
+    "Check lashing forces with the loading computer."
+   ],
+   "conf": "typical"
+  },
+  {
+   "id": "lashing",
+   "sys": "cargo",
+   "name": "Lashing bridges",
+   "match": [
+    "/^lashing_bridge_\\d/",
+    "/^lashing_bridge_/",
+    "reefer_socket_box"
+   ],
+   "fn": "Two-tier platforms between the 40′ bays from which lashing rods are fixed to the 2nd/3rd tier. Reefer sockets and lashing gear bins are often mounted here.",
+   "spec": [
+    [
+     "Tiers",
+     "2 (model)"
+    ]
+   ],
+   "loc": "Between hatch bays.",
+   "ops": [
+    "Fall-protection: rails must be intact."
+   ],
+   "conf": "estimated"
+  },
+  {
+   "id": "crane",
+   "sys": "cargo",
+   "name": "Deck cranes",
+   "match": [
+    "/^deck_crane_\\d/"
+   ],
+   "fn": "Electro-hydraulic slewing, luffing and hoisting jib cranes that let the ship work cargo at ports without shore cranes.",
+   "spec": [
+    [
+     "Number",
+     "3 (published)"
+    ],
+    [
+     "SWL",
+     "≈ 45 t (typical for class; est.)"
+    ],
+    [
+     "Jib",
+     "≈ 32 m (from profile)"
+    ]
+   ],
+   "loc": "Port side, between the hatches.",
+   "ops": [
+    "Load test every 5 years; annual thorough examination (ILO C152).",
+    "Check limit switches and wire ropes before use."
+   ],
+   "conf": "published",
+   "src": [
+    "jsea",
+    "tsuneishi"
+   ]
+  },
+  {
+   "id": "crane_pedestal",
+   "sys": "cargo",
+   "name": "Crane pedestal",
+   "match": [
+    "/^pedestal_/"
+   ],
+   "fn": "Octagonal column welded into the deck structure, supporting the slewing bearing.",
+   "spec": [
+    [
+     "Height",
+     "≈ 15 m (est.)"
+    ]
+   ],
+   "loc": "Crane positions.",
+   "ops": [],
+   "conf": "estimated"
+  },
+  {
+   "id": "slewing_bearing",
+   "sys": "cargo",
+   "name": "Slewing bearing",
+   "match": [
+    "slewing_bearing"
+   ],
+   "fn": "Large roller-bearing ring that lets the crane rotate.",
+   "spec": [],
+   "loc": "Top of the pedestal.",
+   "ops": [
+    "Measure rocking clearance (wear) periodically; grease regularly."
+   ],
+   "conf": "typical"
+  },
+  {
+   "id": "crane_house",
+   "sys": "cargo",
+   "name": "Crane house & operator cab",
+   "match": [
+    "crane_house",
+    "crane_house_roof_edge",
+    "operator_cab",
+    "operator_cab_front_window",
+    "operator_cab_side_window",
+    "slewing_superstructure",
+    "machinery_louvre",
+    "hoist_winch_housing"
+   ],
+   "fn": "Houses the hydraulic power pack, winches and the operator cab.",
+   "spec": [],
+   "loc": "On the slewing bearing.",
+   "ops": [],
+   "conf": "typical"
+  },
+  {
+   "id": "crane_jib",
+   "sys": "cargo",
+   "name": "Jib",
+   "match": [
+    "jib",
+    "jib_box_girder",
+    "jib_heel_lug",
+    "jib_heel_pin",
+    "jib_stiffener_ring",
+    "jib_tip_warning_stripe",
+    "jib_head",
+    "jib_head_sheave"
+   ],
+   "fn": "Box-girder boom, luffed by wires from the tower.",
+   "spec": [
+    [
+     "Length",
+     "≈ 32 m"
+    ]
+   ],
+   "loc": "Crane.",
+   "ops": [],
+   "conf": "estimated"
+  },
+  {
+   "id": "crane_tower",
+   "sys": "cargo",
+   "name": "Luffing tower & wires",
+   "match": [
+    "luffing_tower",
+    "luffing_tower_head",
+    "luffing_tower_sheave",
+    "luffing_tower_ladder",
+    "luffing_wire",
+    "aviation_warning_light"
+   ],
+   "fn": "Tower carrying the luffing sheaves.",
+   "spec": [],
+   "loc": "Crane.",
+   "ops": [],
+   "conf": "estimated"
+  },
+  {
+   "id": "crane_hook",
+   "sys": "cargo",
+   "name": "Hook block & hoist wire",
+   "match": [
+    "hook_block",
+    "cargo_hook",
+    "hoist_wire"
+   ],
+   "fn": "Lifting block with swivel hook; container spreaders attach here.",
+   "spec": [],
+   "loc": "Jib head.",
+   "ops": [],
+   "conf": "typical"
+  },
+  {
+   "id": "windlass",
+   "sys": "deck",
+   "name": "Windlasses",
+   "match": [
+    "/^windlass_/",
+    "cable_lifter",
+    "cable_lifter_whelp",
+    "windlass_brake_drum",
+    "windlass_gearcase",
+    "mooring_drum",
+    "windlass_hydraulic_motor",
+    "windlass_brake_handwheel",
+    "windlass_bedplate"
+   ],
+   "fn": "Hydraulic windlass with a cable lifter (gypsy) for the anchor chain and a mooring drum.",
+   "spec": [
+    [
+     "Chain",
+     "Stud-link, ≈ 80–87 mm grade U3 (est.)"
+    ]
+   ],
+   "loc": "Forecastle, P & S.",
+   "ops": [
+    "Always secure the band brake and stopper at sea; never rely on the windlass brake alone when anchored in heavy weather."
+   ],
+   "conf": "estimated"
+  },
+  {
+   "id": "anchor",
+   "sys": "deck",
+   "name": "Anchors (stockless)",
+   "match": [
+    "/^anchor_(port|starboard)_stockless$/",
+    "anchor_shank",
+    "anchor_crown",
+    "anchor_fluke",
+    "anchor_shackle"
+   ],
+   "fn": "Stockless (Hall-type) bower anchors stowed in the hawse pipes.",
+   "spec": [
+    [
+     "Mass",
+     "≈ 8–10 t each (est.)"
+    ]
+   ],
+   "loc": "Bow, P & S.",
+   "ops": [
+    "Anchor lashings at sea; check the swivel and kenter shackles."
+   ],
+   "conf": "estimated"
+  },
+  {
+   "id": "chain",
+   "sys": "deck",
+   "name": "Anchor chain & chain pipe",
+   "match": [
+    "anchor_chain_on_deck",
+    "chain_pipe_to_locker"
+   ],
+   "fn": "Chain from the windlass to the anchor; the chain pipe leads it down to the chain locker.",
+   "spec": [],
+   "loc": "Forecastle.",
+   "ops": [
+    "Mark shackles; inspect for wear at drydock."
+   ],
+   "conf": "typical"
+  },
+  {
+   "id": "stopper",
+   "sys": "deck",
+   "name": "Chain stopper",
+   "match": [
+    "chain_stopper"
+   ],
+   "fn": "Holds the chain so the windlass does not take the load.",
+   "spec": [],
+   "loc": "Between windlass and hawse pipe.",
+   "ops": [],
+   "conf": "typical"
+  },
+  {
+   "id": "hawse",
+   "sys": "deck",
+   "name": "Hawse pipes",
+   "match": [
+    "hawse_pipe",
+    "hawse_pipe_deck_rim"
+   ],
+   "fn": "Lead the anchor chain from deck to the shell.",
+   "spec": [],
+   "loc": "Bow.",
+   "ops": [],
+   "conf": "typical"
+  },
+  {
+   "id": "mooring_winch",
+   "sys": "deck",
+   "name": "Mooring winches",
+   "match": [
+    "/^(fwd|aft)_mooring_winch_/",
+    "tension_drum",
+    "drum_flange",
+    "band_brake",
+    "warping_head",
+    "reduction_gearbox",
+    "hydraulic_motor",
+    "brake_handwheel",
+    "local_control_stand",
+    "winch_bedplate",
+    "mooring_line_on_drum"
+   ],
+   "fn": "Split-drum hydraulic winches for mooring lines, with band brakes and warping heads.",
+   "spec": [
+    [
+     "Brake",
+     "Set to ≈ 60% of line MBL (OCIMF MEG4)"
+    ]
+   ],
+   "loc": "Forecastle and aft mooring deck.",
+   "ops": [
+    "Brake-holding test annually; watch for snap-back zones."
+   ],
+   "conf": "typical"
+  },
+  {
+   "id": "bitts",
+   "sys": "deck",
+   "name": "Bollards (double bitts)",
+   "match": [
+    "double_bitt_bollard",
+    "bitt_base_plate",
+    "bitt_post",
+    "bitt_cap"
+   ],
+   "fn": "Posts for belaying mooring lines.",
+   "spec": [
+    [
+     "SWL",
+     "Marked on each fitting (MSC.1/Circ.1175)"
+    ]
+   ],
+   "loc": "Fore and aft mooring decks.",
+   "ops": [],
+   "conf": "typical"
+  },
+  {
+   "id": "fairlead",
+   "sys": "deck",
+   "name": "Roller fairleads",
+   "match": [
+    "roller_fairlead",
+    "fairlead_base",
+    "fairlead_roller",
+    "fairlead_frame_top"
+   ],
+   "fn": "Guide mooring lines from the winches to the ship side with minimal chafe.",
+   "spec": [],
+   "loc": "Mooring decks, at the ship side.",
+   "ops": [],
+   "conf": "typical"
+  },
+  {
+   "id": "panama",
+   "sys": "deck",
+   "name": "Panama chocks",
+   "match": [
+    "bow_panama_chock",
+    "stern_panama_chock"
+   ],
+   "fn": "Closed chocks required for Panama Canal transit towing lines.",
+   "spec": [],
+   "loc": "Bow and stern centreline.",
+   "ops": [],
+   "conf": "typical"
+  },
+  {
+   "id": "railings",
+   "sys": "deck",
+   "name": "Railings & accommodation ladders",
+   "match": [
+    "main_deck_railings_steel_galvanized",
+    "main_deck_railings",
+    "handrail",
+    "rail_stanchion",
+    "/^forecastle_access_ladder/",
+    "/^accommodation_ladder/"
+   ],
+   "fn": "Guard rails (≥ 1 m high, Load Line Convention) and stowed accommodation ladders.",
+   "spec": [],
+   "loc": "Deck edges.",
+   "ops": [],
+   "conf": "typical"
+  },
+  {
+   "id": "forepeak_hatch",
+   "sys": "deck",
+   "name": "Forepeak store hatch",
+   "match": [
+    "forepeak_store_hatch"
+   ],
+   "fn": "Access to the bosun store.",
+   "spec": [],
+   "loc": "Forecastle.",
+   "ops": [],
+   "conf": "typical"
+  },
+  {
+   "id": "wheelhouse",
+   "sys": "nav",
+   "name": "Wheelhouse",
+   "match": [
+    "wheelhouse",
+    "bridge_front_windows_inclined",
+    "bridge_side_windows",
+    "bridge_aft_windows",
+    "compass_deck_roof",
+    "bridge_front_sun_visor",
+    "navigation_bridge"
+   ],
+   "fn": "Enclosed navigation bridge. Front windows are inclined 10–25° to reduce reflections (SOLAS V/22).",
+   "spec": [
+    [
+     "Eye height",
+     "≈ 41 m above keel (model)"
+    ],
+    [
+     "Blind sector",
+     "≤ 2 × L or 500 m ahead (SOLAS V/22)"
+    ]
+   ],
+   "loc": "Top of the house.",
+   "ops": [],
+   "conf": "published"
+  },
+  {
+   "id": "wing",
+   "sys": "nav",
+   "name": "Bridge wings",
+   "match": [
+    "/^bridge_wing_/",
+    "wing_deck",
+    "wing_bulwark_outer",
+    "wing_bulwark_front",
+    "wing_bulwark_aft",
+    "wing_console",
+    "wing_console_display",
+    "wing_support_bracket"
+   ],
+   "fn": "Open wings to the full beam for berthing, with repeat consoles.",
+   "spec": [],
+   "loc": "Each side of the wheelhouse.",
+   "ops": [],
+   "conf": "typical"
+  },
+  {
+   "id": "radar_x",
+   "sys": "nav",
+   "name": "X-band radar",
+   "match": [
+    "x_band_radar_platform",
+    "x_band_radar_pedestal",
+    "x_band_radar_antenna_2_5m",
+    "radar_display_x_band"
+   ],
+   "fn": "9 GHz radar with ARPA: good resolution, used for collision avoidance and SART detection.",
+   "spec": [
+    [
+     "Rule",
+     "Ships ≥ 3,000 GT need 2 radars, one X-band (SOLAS V/19)"
+    ]
+   ],
+   "loc": "Radar mast / bridge console.",
+   "ops": [],
+   "conf": "published"
+  },
+  {
+   "id": "radar_s",
+   "sys": "nav",
+   "name": "S-band radar",
+   "match": [
+    "s_band_radar_platform",
+    "s_band_radar_pedestal",
+    "s_band_radar_antenna_3_9m",
+    "radar_display_s_band"
+   ],
+   "fn": "3 GHz radar: less affected by rain and sea clutter.",
+   "spec": [],
+   "loc": "Radar mast top / bridge console.",
+   "ops": [],
+   "conf": "typical"
+  },
+  {
+   "id": "ecdis",
+   "sys": "nav",
+   "name": "ECDIS (×2)",
+   "match": [
+    "ecdis_1",
+    "ecdis_2",
+    "ecdis_1_cabinet",
+    "ecdis_2_cabinet",
+    "ecdis_1_screen",
+    "ecdis_2_screen"
+   ],
+   "fn": "Electronic chart display and information system: the primary means of navigation, with a second unit as back-up.",
+   "spec": [
+    [
+     "Rule",
+     "SOLAS V/19.2.10"
+    ]
+   ],
+   "loc": "Bridge front console.",
+   "ops": [
+    "Keep ENC and software updated (IHO S-52/S-63)."
+   ],
+   "conf": "published"
+  },
+  {
+   "id": "steering_stand",
+   "sys": "nav",
+   "name": "Steering stand & autopilot",
+   "match": [
+    "steering_stand_autopilot",
+    "helm_wheel"
+   ],
+   "fn": "Helm, autopilot, and steering-mode selector (follow-up / non-follow-up / auto).",
+   "spec": [],
+   "loc": "Bridge centreline.",
+   "ops": [
+    "Test manual steering before departure and in restricted waters."
+   ],
+   "conf": "typical"
+  },
+  {
+   "id": "conning",
+   "sys": "nav",
+   "name": "Conning display",
+   "match": [
+    "conning_display",
+    "conning_display_cabinet",
+    "conning_display_screen"
+   ],
+   "fn": "Shows heading, speed, rudder, rpm and wind in one place.",
+   "spec": [],
+   "loc": "Bridge front console.",
+   "ops": [],
+   "conf": "typical"
+  },
+  {
+   "id": "telegraph",
+   "sys": "nav",
+   "name": "Engine telegraph / bridge manoeuvring panel",
+   "match": [
+    "engine_telegraph_panel",
+    "engine_telegraph_panel_cabinet",
+    "engine_telegraph_panel_lever"
+   ],
+   "fn": "Bridge control of main-engine speed and direction through the ME remote control system.",
+   "spec": [],
+   "loc": "Bridge front console.",
+   "ops": [],
+   "conf": "typical"
+  },
+  {
+   "id": "gmdss",
+   "sys": "nav",
+   "name": "GMDSS console & antennas",
+   "match": [
+    "gmdss_console",
+    "whip_antenna"
+   ],
+   "fn": "MF/HF DSC, VHF DSC, Inmarsat/satellite, NAVTEX for sea area A3.",
+   "spec": [
+    [
+     "Rule",
+     "SOLAS IV"
+    ]
+   ],
+   "loc": "Bridge aft / radar mast.",
+   "ops": [
+    "Daily/weekly/monthly tests per GMDSS log."
+   ],
+   "conf": "typical"
+  },
+  {
+   "id": "satcom",
+   "sys": "nav",
+   "name": "Satellite antennas",
+   "match": [
+    "satcom_dome_post",
+    "satcom_radome"
+   ],
+   "fn": "Satellite communication domes (GMDSS/broadband).",
+   "spec": [],
+   "loc": "Compass deck.",
+   "ops": [],
+   "conf": "typical"
+  },
+  {
+   "id": "gnss",
+   "sys": "nav",
+   "name": "GNSS antennas",
+   "match": [
+    "gnss_antenna"
+   ],
+   "fn": "GPS/GNSS position receivers.",
+   "spec": [],
+   "loc": "Radar mast yardarm.",
+   "ops": [],
+   "conf": "typical"
+  },
+  {
+   "id": "gyro",
+   "sys": "nav",
+   "name": "Gyro compass",
+   "match": [
+    "gyro_compass"
+   ],
+   "fn": "True heading reference for radar, ECDIS and autopilot.",
+   "spec": [],
+   "loc": "Wheelhouse (model).",
+   "ops": [],
+   "conf": "typical"
+  },
+  {
+   "id": "compass",
+   "sys": "nav",
+   "name": "Magnetic compass",
+   "match": [
+    "magnetic_compass_binnacle"
+   ],
+   "fn": "Standard magnetic compass (no power needed).",
+   "spec": [],
+   "loc": "Compass deck, centreline.",
+   "ops": [
+    "Adjust and record deviation card annually."
+   ],
+   "conf": "typical"
+  },
+  {
+   "id": "vdr",
+   "sys": "nav",
+   "name": "VDR protective capsule",
+   "match": [
+    "vdr_protective_capsule"
+   ],
+   "fn": "Voyage data recorder capsule (bridge audio, radar, positions) with float-free option.",
+   "spec": [
+    [
+     "Rule",
+     "SOLAS V/20"
+    ]
+   ],
+   "loc": "Compass deck.",
+   "ops": [
+    "Annual performance test."
+   ],
+   "conf": "typical"
+  },
+  {
+   "id": "bnwas",
+   "sys": "nav",
+   "name": "BNWAS",
+   "match": [
+    "bnwas_panel"
+   ],
+   "fn": "Bridge navigational watch alarm system that checks the officer on watch is alert.",
+   "spec": [
+    [
+     "Rule",
+     "SOLAS V/19"
+    ]
+   ],
+   "loc": "Bridge.",
+   "ops": [],
+   "conf": "typical"
+  },
+  {
+   "id": "chart_table",
+   "sys": "nav",
+   "name": "Chart table",
+   "match": [
+    "chart_table"
+   ],
+   "fn": "Paper charts and publications (back-up).",
+   "spec": [],
+   "loc": "Wheelhouse aft.",
+   "ops": [],
+   "conf": "typical"
+  },
+  {
+   "id": "navlights",
+   "sys": "nav",
+   "name": "Navigation lights",
+   "match": [
+    "masthead_light_aft",
+    "masthead_light_forward",
+    "all_round_light",
+    "stern_light",
+    "aft_anchor_light",
+    "forward_anchor_light",
+    "signal_light",
+    "sidelight_starboard_green",
+    "sidelight_port_red",
+    "sidelight_screen"
+   ],
+   "fn": "COLREG lights: two masthead lights (aft higher), sidelights, stern light, anchor lights and NUC/signal lights.",
+   "spec": [
+    [
+     "Rule",
+     "COLREG Annex I"
+    ]
+   ],
+   "loc": "Masts, wings and stern.",
+   "ops": [
+    "Check the nav-light panel alarms before sunset."
+   ],
+   "conf": "published"
+  },
+  {
+   "id": "whistle",
+   "sys": "nav",
+   "name": "Ship’s whistle",
+   "match": [
+    "ship_whistle"
+   ],
+   "fn": "Sound signal (COLREG Annex III).",
+   "spec": [],
+   "loc": "Radar mast.",
+   "ops": [],
+   "conf": "typical"
+  },
+  {
+   "id": "radar_mast",
+   "sys": "nav",
+   "name": "Radar mast",
+   "match": [
+    "radar_mast",
+    "mast_column",
+    "mast_yardarm",
+    "masthead_pole"
+   ],
+   "fn": "Carries the radars, lights and antennas.",
+   "spec": [],
+   "loc": "Compass deck.",
+   "ops": [],
+   "conf": "estimated"
+  },
+  {
+   "id": "foremast",
+   "sys": "nav",
+   "name": "Foremast & bow light post",
+   "match": [
+    "foremast",
+    "foremast_tube",
+    "foremast_platform",
+    "foremast_platform_rail",
+    "foremast_yardarm",
+    "radar_reflector",
+    "masthead_bell_bracket",
+    "bow_light_post"
+   ],
+   "fn": "Forward masthead light, signal lights and bell.",
+   "spec": [],
+   "loc": "Forecastle.",
+   "ops": [],
+   "conf": "estimated"
+  },
+  {
+   "id": "echo",
+   "sys": "nav",
+   "name": "Echo sounder transducer",
+   "match": [
+    "echo_sounder_transducer"
+   ],
+   "fn": "Measures depth under the keel.",
+   "spec": [],
+   "loc": "Hull bottom forward.",
+   "ops": [],
+   "conf": "typical"
+  },
+  {
+   "id": "log",
+   "sys": "nav",
+   "name": "Speed log transducer",
+   "match": [
+    "speed_log_transducer"
+   ],
+   "fn": "Doppler/EM speed log sensor.",
+   "spec": [],
+   "loc": "Hull bottom forward.",
+   "ops": [],
+   "conf": "typical"
+  },
+  {
+   "id": "lifeboat",
+   "sys": "safety",
+   "name": "Free-fall lifeboat",
+   "match": [
+    "free_fall_lifeboat",
+    "lifeboat_hull",
+    "lifeboat_canopy_hatch",
+    "lifeboat_windows",
+    "free_fall_launch_ramp_rail",
+    "recovery_a_frame_leg",
+    "recovery_a_frame_beam"
+   ],
+   "fn": "Totally enclosed lifeboat launched down a stern ramp, with capacity for everyone on board. An A-frame davit recovers it.",
+   "spec": [
+    [
+     "Rule",
+     "SOLAS III/31, LSA Code 4.7"
+    ],
+    [
+     "Capacity",
+     "≥ all persons on board"
+    ]
+   ],
+   "loc": "Stern of the house.",
+   "ops": [
+    "Monthly inspection, launch drill every 3 months (or simulated launch)."
+   ],
+   "conf": "published"
+  },
+  {
+   "id": "rescue_boat",
+   "sys": "safety",
+   "name": "Rescue boat & davit",
+   "match": [
+    "rescue_boat",
+    "rescue_boat_tube",
+    "rescue_boat_console",
+    "rescue_boat_davit_post",
+    "rescue_boat_davit_arm"
+   ],
+   "fn": "Fast rescue boat to recover people from the water and marshal liferafts.",
+   "spec": [
+    [
+     "Launch",
+     "≤ 5 min"
+    ]
+   ],
+   "loc": "House, port side.",
+   "ops": [],
+   "conf": "typical"
+  },
+  {
+   "id": "liferafts",
+   "sys": "safety",
+   "name": "Liferafts",
+   "match": [
+    "liferaft_canister",
+    "liferaft_cradle"
+   ],
+   "fn": "Inflatable liferafts with hydrostatic release units.",
+   "spec": [
+    [
+     "Service",
+     "Annual servicing ashore"
+    ]
+   ],
+   "loc": "Both sides of the house.",
+   "ops": [
+    "HRU expiry date; keep the painter secured to the weak link."
+   ],
+   "conf": "published"
+  },
+  {
+   "id": "fire_main",
+   "sys": "safety",
+   "name": "Fire main & hydrants",
+   "match": [
+    "main_deck_railings_paint_signal_red",
+    "fire_main",
+    "fire_hydrant"
+   ],
+   "fn": "Pressurised fire water main with hydrants placed so two jets can reach any part of the deck.",
+   "spec": [
+    [
+     "Rule",
+     "SOLAS II-2/10.2"
+    ]
+   ],
+   "loc": "Along the main deck both sides.",
+   "ops": [
+    "Drain in freezing conditions; test isolation valves."
+   ],
+   "conf": "published"
+  },
+  {
+   "id": "co2",
+   "sys": "safety",
+   "name": "Fixed CO₂ system",
+   "match": [
+    "co2_room",
+    "co2_cylinders",
+    "co2_manifold"
+   ],
+   "fn": "High-pressure CO₂ flooding for the engine room and cargo holds.",
+   "spec": [
+    [
+     "Rule",
+     "FSS Code Ch. 5"
+    ],
+    [
+     "ER release",
+     "85% within 2 min"
+    ]
+   ],
+   "loc": "CO₂ room in the house (model).",
+   "ops": [
+    "Weigh or level-check bottles; release only after muster and ventilation shutdown."
+   ],
+   "conf": "published",
+   "deep": [
+    "For machinery spaces, the CO₂ quantity must fill at least 40 % of the gross volume of the largest protected space (FSS Code ch. 5). 85 % of the charge must discharge within 2 minutes.",
+    "Release requires two separate controls and a pre-discharge alarm, so the space can be evacuated first."
+   ],
+   "src": [
+    "fss"
+   ]
+  },
+  {
+   "id": "isc",
+   "sys": "safety",
+   "name": "International shore connection",
+   "match": [
+    "international_shore_connection"
+   ],
+   "fn": "Standard flange so shore fire services can pressurise the ship’s fire main.",
+   "spec": [],
+   "loc": "House side.",
+   "ops": [],
+   "conf": "published"
+  },
+  {
+   "id": "lifebuoys",
+   "sys": "safety",
+   "name": "Lifebuoys",
+   "match": [
+    "lifebuoys",
+    "lifebuoy",
+    "lifebuoy_band"
+   ],
+   "fn": "Throwable rings, some fitted with self-igniting lights, smoke signals or buoyant lines.",
+   "spec": [
+    [
+     "Rule",
+     "SOLAS III/7, LSA Code 2.1 (≥ 8 for a cargo ship of this length)"
+    ]
+   ],
+   "loc": "Bridge wings, house front, poop and forecastle.",
+   "ops": [
+    "Monthly inspection; check lights and smoke-signal expiry."
+   ],
+   "conf": "published"
+  },
+  {
+   "id": "fire_hose",
+   "sys": "safety",
+   "name": "Fire hose boxes",
+   "match": [
+    "fire_hose_box"
+   ],
+   "fn": "Hose and nozzle stowed next to each hydrant.",
+   "spec": [
+    [
+     "Rule",
+     "SOLAS II-2/10.2.3"
+    ]
+   ],
+   "loc": "House sides and along the deck.",
+   "ops": [],
+   "conf": "typical"
+  },
+  {
+   "id": "fire_detection",
+   "sys": "safety",
+   "name": "Fire detection panel",
+   "match": [
+    "fire_detection_panel"
+   ],
+   "fn": "Central alarm panel for smoke/heat detectors and call points.",
+   "spec": [],
+   "loc": "Wheelhouse.",
+   "ops": [],
+   "conf": "typical"
+  },
+  {
+   "id": "house",
+   "sys": "accom",
+   "name": "Deckhouse (accommodation)",
+   "match": [
+    "/^house_/",
+    "house_block",
+    "deck_edge_plate",
+    "weathertight_door",
+    "house_windows",
+    "window",
+    "house_railings",
+    "house_ac_units",
+    "ac_condensing_unit",
+    "window_frames",
+    "window_frame"
+   ],
+   "fn": "Seven accommodation levels plus the wheelhouse at the stern end: cabins, mess rooms, offices and the emergency generator room.",
+   "spec": [
+    [
+     "Position",
+     "Stern end (published)"
+    ],
+    [
+     "Levels",
+     "7 + wheelhouse (from profile)"
+    ]
+   ],
+   "loc": "Stern end.",
+   "ops": [],
+   "conf": "published",
+   "src": [
+    "jsea",
+    "tsuneishi"
+   ]
+  },
+  {
+   "id": "ext_stairs",
+   "sys": "accom",
+   "name": "External stairs & landings",
+   "match": [
+    "external_stair",
+    "external_stair_landing",
+    "/^external_stair/"
+   ],
+   "fn": "Steel stairways on the house sides linking every deck level, with grating treads, yellow nosings, handrails and knee rails, and cantilevered landings on brackets. They are secondary escape routes to the lifeboat and muster stations.",
+   "spec": [
+    [
+     "Angle",
+     "≈ 45° (typ. max for ship stairs)"
+    ],
+    [
+     "Rail height",
+     "1.0 m + knee rail (ILLC / SOLAS)"
+    ],
+    [
+     "Width",
+     "≈ 0.8 m (est.)"
+    ]
+   ],
+   "loc": "Aft corners of the house, both sides.",
+   "ops": [
+    "Keep escape routes free of obstruction and treads free of ice/oil."
+   ],
+   "conf": "typical"
+  },
+  {
+   "id": "funnel",
+   "sys": "accom",
+   "name": "Funnel",
+   "match": [
+    "funnel",
+    "funnel_casing",
+    "funnel_top_band",
+    "funnel_top_grating",
+    "main_engine_exhaust_pipe",
+    "/^aux_engine_exhaust_pipe/",
+    "aux_boiler_exhaust_pipe",
+    "incinerator_exhaust_pipe",
+    "funnel_vent_louvre",
+    "funnel_ladder"
+   ],
+   "fn": "Casing around the exhaust uptakes of the main engine, generators, boiler and incinerator. Also carries the ER ventilation.",
+   "spec": [],
+   "loc": "Aft end of the house.",
+   "ops": [],
+   "conf": "typical"
+  }
+ ],
+ "sources": {
+  "man_pg": {
+   "title": "MAN B&W G60ME-C9.5-TII Project Guide, edition 1.0",
+   "org": "MAN Energy Solutions",
+   "year": 2018,
+   "url": "https://www.man-es.com/marine/products/planning-tools-and-downloads/project-guides/two-stroke"
+  },
+  "man_c10": {
+   "title": "Marine Engine Programme (G60ME-C10.5 dimensions, used as proxy)",
+   "org": "MAN Energy Solutions"
+  },
+  "tsuneishi": {
+   "title": "2,806 TEU Type Container Carrier (Geared)",
+   "org": "Tsuneishi Shipbuilding",
+   "url": "https://www.tsuneishi.co.jp/english/products/2806teu-geared/"
+  },
+  "tsuneishi_pr": {
+   "title": "First completion and delivery of new 2,800 TEU container carrier (KMTC Surabaya)",
+   "org": "Tsuneishi Shipbuilding",
+   "year": 2018
+  },
+  "jsea": {
+   "title": "Latest Ships Built in Japan, Containerships, p. 97",
+   "org": "JSEA",
+   "url": "https://www.jsea.or.jp/wp_2022/wp-content/themes/nihon_senpaku/img/publications/sameij/by-ship-type/Containerships.pdf"
+  },
+  "solas": {
+   "title": "SOLAS, consolidated edition",
+   "org": "IMO"
+  },
+  "marpol": {
+   "title": "MARPOL Annex I",
+   "org": "IMO"
+  },
+  "fss": {
+   "title": "International Code for Fire Safety Systems (FSS Code)",
+   "org": "IMO"
+  },
+  "bwm": {
+   "title": "Ballast Water Management Convention, Regulation D-2",
+   "org": "IMO"
+  }
+ }
+}

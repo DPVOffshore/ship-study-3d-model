@@ -1,0 +1,1830 @@
+{
+ "media": {
+  "fo": [
+   "#7a4a1c",
+   "Fuel oil (brown)"
+  ],
+  "lo": [
+   "#c9a000",
+   "Lube oil (yellow)"
+  ],
+  "cyl": [
+   "#c9a000",
+   "Cylinder oil",
+   "6 3"
+  ],
+  "servo": [
+   "#c9a000",
+   "Servo/hydraulic oil",
+   "2 3"
+  ],
+  "ht": [
+   "#2c5fa8",
+   "HT fresh water (blue)"
+  ],
+  "lt": [
+   "#2c5fa8",
+   "LT fresh water",
+   "7 4"
+  ],
+  "sw": [
+   "#2e8b3e",
+   "Sea water (green)"
+  ],
+  "air": [
+   "#5f9ccf",
+   "Air (light blue)"
+  ],
+  "exh": [
+   "#222",
+   "Exhaust gas"
+  ],
+  "ballast": [
+   "#2e8b3e",
+   "Ballast water",
+   "7 4"
+  ],
+  "bilge": [
+   "#6b6b2f",
+   "Oily bilge"
+  ],
+  "el": [
+   "#7b3fa0",
+   "Electrical power"
+  ],
+  "mech": [
+   "#888",
+   "Mechanical drive",
+   "2 4"
+  ],
+  "ret": [
+   "#7a4a1c",
+   "Fuel return",
+   "4 4"
+  ]
+ },
+ "diagrams": [
+  {
+   "id": "fo",
+   "title": "Fuel oil system",
+   "desc": "HFO is heated, settled and centrifuged before the pressurised supply/booster circuit brings it to injection viscosity. On ME engines the HCU fuel boosters raise pressure to ~600–1,000 bar only during injection.",
+   "nodes": [
+    {
+     "id": "bunker",
+     "x": 90,
+     "y": 70,
+     "w": 150,
+     "h": 58,
+     "label": "HFO bunker tanks",
+     "sub": "heated, protected loc.",
+     "part": "hfo_tanks"
+    },
+    {
+     "id": "transfer",
+     "x": 90,
+     "y": 200,
+     "w": 150,
+     "h": 58,
+     "label": "FO transfer pump"
+    },
+    {
+     "id": "settling",
+     "x": 280,
+     "y": 70,
+     "w": 150,
+     "h": 58,
+     "label": "Settling tank",
+     "sub": "≈ 60–70 °C, drain water",
+     "part": "settling_service"
+    },
+    {
+     "id": "heater",
+     "x": 470,
+     "y": 70,
+     "w": 150,
+     "h": 58,
+     "label": "Purifier heater",
+     "sub": "≈ 98 °C"
+    },
+    {
+     "id": "purif",
+     "x": 660,
+     "y": 70,
+     "w": 150,
+     "h": 58,
+     "label": "HFO purifiers",
+     "sub": "water + cat-fines out",
+     "part": "fo_purifier"
+    },
+    {
+     "id": "service",
+     "x": 850,
+     "y": 70,
+     "w": 150,
+     "h": 58,
+     "label": "Service tank",
+     "sub": "≥ 8 h at MCR",
+     "part": "settling_service"
+    },
+    {
+     "id": "mgo",
+     "x": 850,
+     "y": 200,
+     "w": 150,
+     "h": 58,
+     "label": "MGO service tank",
+     "sub": "ECA / low-S",
+     "part": "settling_service"
+    },
+    {
+     "id": "cov",
+     "x": 850,
+     "y": 320,
+     "w": 150,
+     "h": 58,
+     "label": "Change-over valve",
+     "sub": "HFO ⇄ MGO"
+    },
+    {
+     "id": "supply",
+     "x": 660,
+     "y": 320,
+     "w": 150,
+     "h": 58,
+     "label": "Supply pumps",
+     "sub": "≈ 4 bar",
+     "part": "fo_module"
+    },
+    {
+     "id": "flow",
+     "x": 470,
+     "y": 320,
+     "w": 150,
+     "h": 58,
+     "label": "Flowmeter",
+     "sub": "",
+     "part": "fo_module"
+    },
+    {
+     "id": "mix",
+     "x": 280,
+     "y": 320,
+     "w": 150,
+     "h": 58,
+     "label": "Venting / mixing tank",
+     "sub": "return collected",
+     "part": "fo_module"
+    },
+    {
+     "id": "booster",
+     "x": 90,
+     "y": 440,
+     "w": 150,
+     "h": 58,
+     "label": "Circulating (booster) pumps",
+     "sub": "≈ 7–8 bar",
+     "part": "fo_module"
+    },
+    {
+     "id": "heaters",
+     "x": 280,
+     "y": 440,
+     "w": 150,
+     "h": 58,
+     "label": "FO heaters + viscosimeter",
+     "sub": "10–15 cSt",
+     "part": "fo_module"
+    },
+    {
+     "id": "filter",
+     "x": 470,
+     "y": 440,
+     "w": 150,
+     "h": 58,
+     "label": "Fine filter",
+     "sub": "",
+     "part": "fo_module"
+    },
+    {
+     "id": "engine",
+     "x": 660,
+     "y": 440,
+     "w": 150,
+     "h": 58,
+     "label": "ME fuel inlet",
+     "sub": "HCU rail",
+     "part": "main_engine"
+    },
+    {
+     "id": "hcu",
+     "x": 850,
+     "y": 440,
+     "w": 150,
+     "h": 58,
+     "label": "HCU FO boosters",
+     "sub": "FIVA-controlled",
+     "part": "me_booster"
+    },
+    {
+     "id": "valves",
+     "x": 850,
+     "y": 540,
+     "w": 150,
+     "h": 58,
+     "label": "Fuel valves ×2/cyl",
+     "sub": "600–1,000 bar",
+     "part": "me_fuel_valve"
+    },
+    {
+     "id": "dg",
+     "x": 470,
+     "y": 540,
+     "w": 150,
+     "h": 58,
+     "label": "Diesel generators",
+     "sub": "branch supply",
+     "part": "dg"
+    }
+   ],
+   "links": [
+    [
+     "bunker",
+     "transfer",
+     "fo"
+    ],
+    [
+     "transfer",
+     "settling",
+     "fo",
+     [
+      [
+       90,
+       135
+      ],
+      [
+       185,
+       135
+      ],
+      [
+       185,
+       70
+      ]
+     ]
+    ],
+    [
+     "settling",
+     "heater",
+     "fo"
+    ],
+    [
+     "heater",
+     "purif",
+     "fo"
+    ],
+    [
+     "purif",
+     "service",
+     "fo"
+    ],
+    [
+     "service",
+     "cov",
+     "fo",
+     [
+      [
+       960,
+       70
+      ],
+      [
+       960,
+       320
+      ]
+     ]
+    ],
+    [
+     "mgo",
+     "cov",
+     "fo"
+    ],
+    [
+     "cov",
+     "supply",
+     "fo"
+    ],
+    [
+     "supply",
+     "flow",
+     "fo"
+    ],
+    [
+     "flow",
+     "mix",
+     "fo"
+    ],
+    [
+     "mix",
+     "booster",
+     "fo",
+     [
+      [
+       185,
+       320
+      ],
+      [
+       185,
+       440
+      ]
+     ]
+    ],
+    [
+     "booster",
+     "heaters",
+     "fo"
+    ],
+    [
+     "heaters",
+     "filter",
+     "fo"
+    ],
+    [
+     "filter",
+     "engine",
+     "fo"
+    ],
+    [
+     "engine",
+     "hcu",
+     "fo"
+    ],
+    [
+     "hcu",
+     "valves",
+     "fo"
+    ],
+    [
+     "filter",
+     "dg",
+     "fo"
+    ],
+    [
+     "engine",
+     "mix",
+     "ret",
+     [
+      [
+       660,
+       390
+      ],
+      [
+       360,
+       390
+      ],
+      [
+       360,
+       320
+      ]
+     ]
+    ]
+   ]
+  },
+  {
+   "id": "cw",
+   "title": "Central cooling water system",
+   "desc": "Sea water cools only the central coolers. A closed LT fresh-water circuit cools the consumers; the HT jacket circuit keeps the cylinders at ~85–90 °C and heats the fresh water generator.",
+   "nodes": [
+    {
+     "id": "chest",
+     "x": 90,
+     "y": 480,
+     "w": 150,
+     "h": 58,
+     "label": "Sea chests",
+     "sub": "high / low",
+     "part": "sea_chest"
+    },
+    {
+     "id": "swp",
+     "x": 270,
+     "y": 480,
+     "w": 150,
+     "h": 58,
+     "label": "SW cooling pumps",
+     "sub": "",
+     "part": "sw_pump"
+    },
+    {
+     "id": "cc",
+     "x": 450,
+     "y": 480,
+     "w": 150,
+     "h": 58,
+     "label": "Central coolers",
+     "sub": "titanium plate",
+     "part": "central_cooler"
+    },
+    {
+     "id": "ob",
+     "x": 630,
+     "y": 480,
+     "w": 150,
+     "h": 58,
+     "label": "Overboard",
+     "sub": ""
+    },
+    {
+     "id": "ltp",
+     "x": 450,
+     "y": 350,
+     "w": 150,
+     "h": 58,
+     "label": "LT FW pumps",
+     "sub": "",
+     "part": "lt_pump"
+    },
+    {
+     "id": "ltv",
+     "x": 270,
+     "y": 350,
+     "w": 150,
+     "h": 58,
+     "label": "LT 3-way valve",
+     "sub": "≈ 36 °C"
+    },
+    {
+     "id": "scav",
+     "x": 630,
+     "y": 110,
+     "w": 150,
+     "h": 58,
+     "label": "Scavenge air cooler",
+     "sub": "",
+     "part": "me_air_cooler"
+    },
+    {
+     "id": "loc",
+     "x": 630,
+     "y": 200,
+     "w": 150,
+     "h": 58,
+     "label": "Main LO cooler",
+     "sub": "",
+     "part": "lo_cooler"
+    },
+    {
+     "id": "jwc",
+     "x": 630,
+     "y": 290,
+     "w": 150,
+     "h": 58,
+     "label": "Jacket water cooler",
+     "sub": ""
+    },
+    {
+     "id": "aux",
+     "x": 630,
+     "y": 380,
+     "w": 150,
+     "h": 58,
+     "label": "DGs, compressors, misc.",
+     "sub": "",
+     "part": "dg"
+    },
+    {
+     "id": "jwp",
+     "x": 830,
+     "y": 380,
+     "w": 150,
+     "h": 58,
+     "label": "Jacket water pumps",
+     "sub": "",
+     "part": "jw_pump"
+    },
+    {
+     "id": "eng",
+     "x": 830,
+     "y": 240,
+     "w": 150,
+     "h": 58,
+     "label": "ME jackets & covers",
+     "sub": "≈ 85–90 °C out",
+     "part": "me_jacket"
+    },
+    {
+     "id": "dea",
+     "x": 830,
+     "y": 100,
+     "w": 150,
+     "h": 58,
+     "label": "Deaerator / expansion tank"
+    },
+    {
+     "id": "fwg",
+     "x": 990,
+     "y": 240,
+     "w": 130,
+     "h": 58,
+     "label": "FW generator",
+     "sub": "uses HT heat",
+     "part": "fwg"
+    }
+   ],
+   "links": [
+    [
+     "chest",
+     "swp",
+     "sw"
+    ],
+    [
+     "swp",
+     "cc",
+     "sw"
+    ],
+    [
+     "cc",
+     "ob",
+     "sw"
+    ],
+    [
+     "cc",
+     "ltp",
+     "lt"
+    ],
+    [
+     "ltp",
+     "scav",
+     "lt",
+     [
+      [
+       540,
+       350
+      ],
+      [
+       540,
+       110
+      ]
+     ]
+    ],
+    [
+     "ltp",
+     "loc",
+     "lt",
+     [
+      [
+       540,
+       350
+      ],
+      [
+       540,
+       200
+      ]
+     ]
+    ],
+    [
+     "ltp",
+     "jwc",
+     "lt",
+     [
+      [
+       540,
+       350
+      ],
+      [
+       540,
+       290
+      ]
+     ]
+    ],
+    [
+     "ltp",
+     "aux",
+     "lt",
+     [
+      [
+       540,
+       350
+      ],
+      [
+       540,
+       380
+      ]
+     ]
+    ],
+    [
+     "aux",
+     "ltv",
+     "lt",
+     [
+      [
+       630,
+       420
+      ],
+      [
+       270,
+       420
+      ]
+     ]
+    ],
+    [
+     "ltv",
+     "cc",
+     "lt",
+     [
+      [
+       270,
+       410
+      ],
+      [
+       400,
+       410
+      ],
+      [
+       400,
+       480
+      ]
+     ]
+    ],
+    [
+     "jwp",
+     "eng",
+     "ht"
+    ],
+    [
+     "eng",
+     "dea",
+     "ht"
+    ],
+    [
+     "eng",
+     "fwg",
+     "ht"
+    ],
+    [
+     "fwg",
+     "jwc",
+     "ht",
+     [
+      [
+       990,
+       300
+      ],
+      [
+       720,
+       300
+      ],
+      [
+       720,
+       290
+      ]
+     ]
+    ],
+    [
+     "jwc",
+     "jwp",
+     "ht",
+     [
+      [
+       720,
+       290
+      ],
+      [
+       720,
+       380
+      ]
+     ]
+    ]
+   ]
+  },
+  {
+   "id": "lo",
+   "title": "Lubricating oil system",
+   "desc": "System oil lubricates the bearings and cools the pistons. Part of it is filtered and pressurised to 300 bar by the HPS and becomes servo oil for the HCUs. Cylinder oil is a separate oil that is consumed in the cylinder, fed by the Alpha lubricators.",
+   "nodes": [
+    {
+     "id": "sump",
+     "x": 90,
+     "y": 470,
+     "w": 150,
+     "h": 58,
+     "label": "ME LO sump tank",
+     "sub": "double bottom",
+     "part": "lo_sump"
+    },
+    {
+     "id": "lop",
+     "x": 270,
+     "y": 470,
+     "w": 150,
+     "h": 58,
+     "label": "Main LO pumps",
+     "sub": "1 + stand-by",
+     "part": "lo_pump"
+    },
+    {
+     "id": "loc",
+     "x": 450,
+     "y": 470,
+     "w": 150,
+     "h": 58,
+     "label": "LO cooler + 3-way valve",
+     "sub": "≈ 45 °C",
+     "part": "lo_cooler"
+    },
+    {
+     "id": "fil",
+     "x": 630,
+     "y": 470,
+     "w": 150,
+     "h": 58,
+     "label": "Auto back-flush filter",
+     "sub": "",
+     "part": "lo_filter"
+    },
+    {
+     "id": "inl",
+     "x": 810,
+     "y": 470,
+     "w": 150,
+     "h": 58,
+     "label": "Engine inlet",
+     "sub": "≈ 2–2.5 bar",
+     "part": "main_engine"
+    },
+    {
+     "id": "brg",
+     "x": 810,
+     "y": 340,
+     "w": 170,
+     "h": 58,
+     "label": "Main, crankpin & crosshead brgs",
+     "sub": "",
+     "part": "me_main_bearing"
+    },
+    {
+     "id": "pis",
+     "x": 630,
+     "y": 340,
+     "w": 150,
+     "h": 58,
+     "label": "Piston cooling",
+     "sub": "via crosshead",
+     "part": "me_piston"
+    },
+    {
+     "id": "tc",
+     "x": 990,
+     "y": 340,
+     "w": 130,
+     "h": 58,
+     "label": "Turbocharger bearings",
+     "sub": "",
+     "part": "me_tc"
+    },
+    {
+     "id": "hps",
+     "x": 810,
+     "y": 210,
+     "w": 170,
+     "h": 58,
+     "label": "HPS: 6 µm filter + pumps",
+     "sub": "300 bar, aft end",
+     "part": "me_hps"
+    },
+    {
+     "id": "hcu",
+     "x": 630,
+     "y": 210,
+     "w": 150,
+     "h": 58,
+     "label": "HCUs",
+     "sub": "boosters + exh. valves",
+     "part": "me_hcu"
+    },
+    {
+     "id": "drn",
+     "x": 90,
+     "y": 340,
+     "w": 150,
+     "h": 58,
+     "label": "Crankcase drain",
+     "sub": "",
+     "part": "lo_sump"
+    },
+    {
+     "id": "pur",
+     "x": 270,
+     "y": 340,
+     "w": 150,
+     "h": 58,
+     "label": "LO purifier",
+     "sub": "bypass cleaning",
+     "part": "lo_purifier"
+    },
+    {
+     "id": "cst",
+     "x": 90,
+     "y": 80,
+     "w": 150,
+     "h": 58,
+     "label": "Cylinder oil storage",
+     "sub": "BN 15–140"
+    },
+    {
+     "id": "csv",
+     "x": 270,
+     "y": 80,
+     "w": 150,
+     "h": 58,
+     "label": "Cyl. oil service tank"
+    },
+    {
+     "id": "alpha",
+     "x": 450,
+     "y": 80,
+     "w": 150,
+     "h": 58,
+     "label": "Alpha lubricators",
+     "sub": "electronic timing",
+     "part": "me_lubrication"
+    },
+    {
+     "id": "quill",
+     "x": 630,
+     "y": 80,
+     "w": 150,
+     "h": 58,
+     "label": "Liner quills",
+     "sub": "consumed in cylinder",
+     "part": "me_lubrication"
+    }
+   ],
+   "links": [
+    [
+     "sump",
+     "lop",
+     "lo"
+    ],
+    [
+     "lop",
+     "loc",
+     "lo"
+    ],
+    [
+     "loc",
+     "fil",
+     "lo"
+    ],
+    [
+     "fil",
+     "inl",
+     "lo"
+    ],
+    [
+     "inl",
+     "brg",
+     "lo"
+    ],
+    [
+     "inl",
+     "pis",
+     "lo",
+     [
+      [
+       720,
+       470
+      ],
+      [
+       720,
+       340
+      ]
+     ]
+    ],
+    [
+     "inl",
+     "tc",
+     "lo",
+     [
+      [
+       990,
+       470
+      ],
+      [
+       990,
+       340
+      ]
+     ]
+    ],
+    [
+     "inl",
+     "hps",
+     "lo",
+     [
+      [
+       900,
+       470
+      ],
+      [
+       900,
+       210
+      ]
+     ]
+    ],
+    [
+     "hps",
+     "hcu",
+     "servo"
+    ],
+    [
+     "brg",
+     "drn",
+     "lo",
+     [
+      [
+       810,
+       280
+      ],
+      [
+       90,
+       280
+      ]
+     ]
+    ],
+    [
+     "drn",
+     "sump",
+     "lo"
+    ],
+    [
+     "sump",
+     "pur",
+     "lo",
+     [
+      [
+       180,
+       470
+      ],
+      [
+       180,
+       340
+      ]
+     ]
+    ],
+    [
+     "pur",
+     "drn",
+     "lo"
+    ],
+    [
+     "cst",
+     "csv",
+     "cyl"
+    ],
+    [
+     "csv",
+     "alpha",
+     "cyl"
+    ],
+    [
+     "alpha",
+     "quill",
+     "cyl"
+    ]
+   ]
+  },
+  {
+   "id": "air",
+   "title": "Scavenge air & exhaust gas",
+   "desc": "Constant-pressure turbocharging with uniflow scavenging: air enters through the liner ports at the bottom and exhaust leaves through the single exhaust valve at the top.",
+   "nodes": [
+    {
+     "id": "in",
+     "x": 90,
+     "y": 330,
+     "w": 150,
+     "h": 58,
+     "label": "ER air",
+     "sub": "intake filter/silencer",
+     "part": "me_tc"
+    },
+    {
+     "id": "comp",
+     "x": 270,
+     "y": 330,
+     "w": 150,
+     "h": 58,
+     "label": "TC compressor",
+     "sub": "",
+     "part": "me_tc_rotor"
+    },
+    {
+     "id": "cool",
+     "x": 450,
+     "y": 330,
+     "w": 150,
+     "h": 58,
+     "label": "Scavenge air cooler",
+     "sub": "≈ 35–45 °C",
+     "part": "me_air_cooler"
+    },
+    {
+     "id": "wmc",
+     "x": 630,
+     "y": 330,
+     "w": 150,
+     "h": 58,
+     "label": "Water mist catcher",
+     "sub": "drain",
+     "part": "me_air_cooler"
+    },
+    {
+     "id": "rec",
+     "x": 810,
+     "y": 330,
+     "w": 150,
+     "h": 58,
+     "label": "Scavenge air receiver",
+     "sub": "≤ 4.5 bar",
+     "part": "me_scav_receiver"
+    },
+    {
+     "id": "blow",
+     "x": 810,
+     "y": 460,
+     "w": 150,
+     "h": 58,
+     "label": "Auxiliary blowers",
+     "sub": "start / low load",
+     "part": "me_aux_blower"
+    },
+    {
+     "id": "cyl",
+     "x": 990,
+     "y": 200,
+     "w": 130,
+     "h": 58,
+     "label": "Cylinder",
+     "sub": "via scavenge ports",
+     "part": "me_ports"
+    },
+    {
+     "id": "exv",
+     "x": 810,
+     "y": 200,
+     "w": 150,
+     "h": 58,
+     "label": "Exhaust valve",
+     "sub": "hydraulic open",
+     "part": "me_exhaust_valve"
+    },
+    {
+     "id": "exr",
+     "x": 630,
+     "y": 200,
+     "w": 150,
+     "h": 58,
+     "label": "Exhaust receiver",
+     "sub": "≈ 350–450 °C",
+     "part": "me_exh_receiver"
+    },
+    {
+     "id": "tur",
+     "x": 450,
+     "y": 200,
+     "w": 150,
+     "h": 58,
+     "label": "TC turbine",
+     "sub": "",
+     "part": "me_tc"
+    },
+    {
+     "id": "egb",
+     "x": 450,
+     "y": 70,
+     "w": 150,
+     "h": 58,
+     "label": "Exhaust gas economiser",
+     "sub": "steam",
+     "part": "egb"
+    },
+    {
+     "id": "sil",
+     "x": 630,
+     "y": 70,
+     "w": 150,
+     "h": 58,
+     "label": "Silencer",
+     "sub": "",
+     "part": "silencer"
+    },
+    {
+     "id": "fun",
+     "x": 810,
+     "y": 70,
+     "w": 150,
+     "h": 58,
+     "label": "Funnel",
+     "sub": "",
+     "part": "funnel"
+    }
+   ],
+   "links": [
+    [
+     "in",
+     "comp",
+     "air"
+    ],
+    [
+     "comp",
+     "cool",
+     "air"
+    ],
+    [
+     "cool",
+     "wmc",
+     "air"
+    ],
+    [
+     "wmc",
+     "rec",
+     "air"
+    ],
+    [
+     "blow",
+     "rec",
+     "air"
+    ],
+    [
+     "rec",
+     "cyl",
+     "air",
+     [
+      [
+       990,
+       330
+      ],
+      [
+       990,
+       200
+      ]
+     ]
+    ],
+    [
+     "cyl",
+     "exv",
+     "exh"
+    ],
+    [
+     "exv",
+     "exr",
+     "exh"
+    ],
+    [
+     "exr",
+     "tur",
+     "exh"
+    ],
+    [
+     "tur",
+     "comp",
+     "mech",
+     [
+      [
+       360,
+       200
+      ],
+      [
+       360,
+       330
+      ]
+     ]
+    ],
+    [
+     "tur",
+     "egb",
+     "exh"
+    ],
+    [
+     "egb",
+     "sil",
+     "exh"
+    ],
+    [
+     "sil",
+     "fun",
+     "exh"
+    ]
+   ]
+  },
+  {
+   "id": "bb",
+   "title": "Ballast & bilge systems",
+   "desc": "Ballast water is treated to the IMO D-2 standard on intake (and, depending on the system, on discharge). Oily bilge water goes through the holding tank and a 15 ppm separator; oil residues go to the sludge tank.",
+   "nodes": [
+    {
+     "id": "chest",
+     "x": 90,
+     "y": 110,
+     "w": 150,
+     "h": 58,
+     "label": "Sea chest",
+     "sub": "",
+     "part": "sea_chest"
+    },
+    {
+     "id": "bp",
+     "x": 270,
+     "y": 110,
+     "w": 150,
+     "h": 58,
+     "label": "Ballast pumps",
+     "sub": "",
+     "part": "ballast_pump"
+    },
+    {
+     "id": "bw",
+     "x": 450,
+     "y": 110,
+     "w": 150,
+     "h": 58,
+     "label": "BWMS",
+     "sub": "filter + UV (D-2)",
+     "part": "bwts"
+    },
+    {
+     "id": "main",
+     "x": 630,
+     "y": 110,
+     "w": 150,
+     "h": 58,
+     "label": "Ballast main",
+     "sub": "in duct keel",
+     "part": "duct_keel"
+    },
+    {
+     "id": "db",
+     "x": 810,
+     "y": 60,
+     "w": 150,
+     "h": 58,
+     "label": "DB & wing tanks",
+     "sub": "",
+     "part": "db_ballast"
+    },
+    {
+     "id": "pk",
+     "x": 810,
+     "y": 170,
+     "w": 150,
+     "h": 58,
+     "label": "Fore & aft peaks",
+     "sub": "",
+     "part": "peak_tanks"
+    },
+    {
+     "id": "ob1",
+     "x": 450,
+     "y": 230,
+     "w": 150,
+     "h": 58,
+     "label": "Overboard",
+     "sub": "sampling point"
+    },
+    {
+     "id": "wells",
+     "x": 90,
+     "y": 380,
+     "w": 150,
+     "h": 58,
+     "label": "Bilge wells",
+     "sub": "holds & ER",
+     "part": "bilge_pump"
+    },
+    {
+     "id": "bil",
+     "x": 270,
+     "y": 380,
+     "w": 150,
+     "h": 58,
+     "label": "Bilge pump",
+     "sub": "",
+     "part": "bilge_pump"
+    },
+    {
+     "id": "hold",
+     "x": 450,
+     "y": 380,
+     "w": 150,
+     "h": 58,
+     "label": "Bilge holding tank",
+     "sub": "",
+     "part": "sludge_bilge"
+    },
+    {
+     "id": "ows",
+     "x": 630,
+     "y": 380,
+     "w": 150,
+     "h": 58,
+     "label": "Oily water separator",
+     "sub": "",
+     "part": "ows"
+    },
+    {
+     "id": "ocm",
+     "x": 810,
+     "y": 380,
+     "w": 150,
+     "h": 58,
+     "label": "15 ppm monitor",
+     "sub": "auto 3-way valve",
+     "part": "ows"
+    },
+    {
+     "id": "ob2",
+     "x": 990,
+     "y": 380,
+     "w": 130,
+     "h": 58,
+     "label": "Overboard",
+     "sub": "≤ 15 ppm",
+     "part": null
+    },
+    {
+     "id": "sl",
+     "x": 630,
+     "y": 500,
+     "w": 150,
+     "h": 58,
+     "label": "Sludge tank",
+     "sub": "→ incinerator / shore",
+     "part": "sludge_bilge"
+    },
+    {
+     "id": "sh",
+     "x": 450,
+     "y": 500,
+     "w": 150,
+     "h": 58,
+     "label": "Standard discharge conn.",
+     "sub": "to shore"
+    }
+   ],
+   "links": [
+    [
+     "chest",
+     "bp",
+     "ballast"
+    ],
+    [
+     "bp",
+     "bw",
+     "ballast"
+    ],
+    [
+     "bw",
+     "main",
+     "ballast"
+    ],
+    [
+     "main",
+     "db",
+     "ballast"
+    ],
+    [
+     "main",
+     "pk",
+     "ballast"
+    ],
+    [
+     "bw",
+     "ob1",
+     "ballast"
+    ],
+    [
+     "wells",
+     "bil",
+     "bilge"
+    ],
+    [
+     "bil",
+     "hold",
+     "bilge"
+    ],
+    [
+     "hold",
+     "ows",
+     "bilge"
+    ],
+    [
+     "ows",
+     "ocm",
+     "bilge"
+    ],
+    [
+     "ocm",
+     "ob2",
+     "bilge"
+    ],
+    [
+     "ocm",
+     "hold",
+     "bilge",
+     [
+      [
+       810,
+       440
+      ],
+      [
+       450,
+       440
+      ]
+     ]
+    ],
+    [
+     "ows",
+     "sl",
+     "bilge"
+    ],
+    [
+     "hold",
+     "sh",
+     "bilge"
+    ]
+   ]
+  },
+  {
+   "id": "sa",
+   "title": "Starting & control air",
+   "desc": "Two compressors charge 30 bar receivers sized for at least 12 consecutive starts of the reversible main engine. A reducing station supplies 7 bar control and safety air, including the exhaust-valve air springs.",
+   "nodes": [
+    {
+     "id": "c",
+     "x": 110,
+     "y": 200,
+     "w": 170,
+     "h": 58,
+     "label": "Main air compressors ×2",
+     "sub": "",
+     "part": "compressor"
+    },
+    {
+     "id": "ec",
+     "x": 110,
+     "y": 360,
+     "w": 170,
+     "h": 58,
+     "label": "Emergency compressor",
+     "sub": "(diesel or hand start)",
+     "part": null
+    },
+    {
+     "id": "rcv",
+     "x": 330,
+     "y": 200,
+     "w": 150,
+     "h": 58,
+     "label": "Starting air receivers",
+     "sub": "30 bar ×2",
+     "part": "air_receiver"
+    },
+    {
+     "id": "msv",
+     "x": 530,
+     "y": 200,
+     "w": 150,
+     "h": 58,
+     "label": "Main starting valve",
+     "sub": "ECS-controlled",
+     "part": "pipe_air"
+    },
+    {
+     "id": "csv",
+     "x": 730,
+     "y": 200,
+     "w": 150,
+     "h": 58,
+     "label": "Cylinder starting valves",
+     "sub": "opened in firing order",
+     "part": "me_starting_valve"
+    },
+    {
+     "id": "red",
+     "x": 330,
+     "y": 360,
+     "w": 150,
+     "h": 58,
+     "label": "Reducing station",
+     "sub": "30 → 7 bar"
+    },
+    {
+     "id": "ctrl",
+     "x": 530,
+     "y": 360,
+     "w": 150,
+     "h": 58,
+     "label": "Control & safety air",
+     "sub": "7 bar"
+    },
+    {
+     "id": "spr",
+     "x": 730,
+     "y": 360,
+     "w": 150,
+     "h": 58,
+     "label": "Exhaust-valve air springs",
+     "sub": "",
+     "part": "me_exhaust_valve"
+    },
+    {
+     "id": "aux",
+     "x": 530,
+     "y": 480,
+     "w": 150,
+     "h": 58,
+     "label": "DG starting",
+     "sub": "",
+     "part": "dg"
+    }
+   ],
+   "links": [
+    [
+     "c",
+     "rcv",
+     "air"
+    ],
+    [
+     "ec",
+     "rcv",
+     "air",
+     [
+      [
+       220,
+       360
+      ],
+      [
+       220,
+       200
+      ]
+     ]
+    ],
+    [
+     "rcv",
+     "msv",
+     "air"
+    ],
+    [
+     "msv",
+     "csv",
+     "air"
+    ],
+    [
+     "rcv",
+     "red",
+     "air"
+    ],
+    [
+     "red",
+     "ctrl",
+     "air"
+    ],
+    [
+     "ctrl",
+     "spr",
+     "air"
+    ],
+    [
+     "rcv",
+     "aux",
+     "air",
+     [
+      [
+       400,
+       250
+      ],
+      [
+       400,
+       480
+      ]
+     ]
+    ]
+   ]
+  },
+  {
+   "id": "el",
+   "title": "Electrical power distribution",
+   "desc": "Diesel generators feed the main switchboard; large consumers are fed directly, small ones via transformers. The emergency generator starts automatically on blackout and feeds the emergency switchboard.",
+   "nodes": [
+    {
+     "id": "dg",
+     "x": 120,
+     "y": 150,
+     "w": 170,
+     "h": 58,
+     "label": "Diesel generators ×3",
+     "sub": "450 V, 60 Hz (typ.)",
+     "part": "dg"
+    },
+    {
+     "id": "msb",
+     "x": 400,
+     "y": 150,
+     "w": 150,
+     "h": 58,
+     "label": "Main switchboard",
+     "sub": "ECR",
+     "part": "msb"
+    },
+    {
+     "id": "bt",
+     "x": 680,
+     "y": 60,
+     "w": 150,
+     "h": 58,
+     "label": "Bow thruster",
+     "sub": "",
+     "part": "bow_thruster"
+    },
+    {
+     "id": "rf",
+     "x": 680,
+     "y": 140,
+     "w": 150,
+     "h": 58,
+     "label": "Reefer sockets",
+     "sub": "600",
+     "part": "deck_stow"
+    },
+    {
+     "id": "cr",
+     "x": 680,
+     "y": 220,
+     "w": 150,
+     "h": 58,
+     "label": "Deck cranes ×3",
+     "sub": "",
+     "part": "crane"
+    },
+    {
+     "id": "pm",
+     "x": 680,
+     "y": 300,
+     "w": 150,
+     "h": 58,
+     "label": "ER pumps & motors",
+     "sub": "",
+     "part": "aux"
+    },
+    {
+     "id": "tr",
+     "x": 400,
+     "y": 300,
+     "w": 150,
+     "h": 58,
+     "label": "Transformers",
+     "sub": "440 / 230 V",
+     "part": "transformer"
+    },
+    {
+     "id": "lt",
+     "x": 680,
+     "y": 380,
+     "w": 150,
+     "h": 58,
+     "label": "Lighting & 230 V",
+     "sub": ""
+    },
+    {
+     "id": "sh",
+     "x": 120,
+     "y": 300,
+     "w": 170,
+     "h": 58,
+     "label": "Shore connection",
+     "sub": "",
+     "part": "shore"
+    },
+    {
+     "id": "eg",
+     "x": 120,
+     "y": 480,
+     "w": 170,
+     "h": 58,
+     "label": "Emergency generator",
+     "sub": "auto start ≤ 45 s",
+     "part": "em_gen"
+    },
+    {
+     "id": "esb",
+     "x": 400,
+     "y": 480,
+     "w": 150,
+     "h": 58,
+     "label": "Emergency switchboard",
+     "sub": "",
+     "part": "esb"
+    },
+    {
+     "id": "ec",
+     "x": 680,
+     "y": 480,
+     "w": 190,
+     "h": 58,
+     "label": "Emergency consumers",
+     "sub": "steering, EFP, nav lts, GMDSS",
+     "part": null
+    },
+    {
+     "id": "bat",
+     "x": 950,
+     "y": 480,
+     "w": 130,
+     "h": 58,
+     "label": "Batteries",
+     "sub": "transitional source",
+     "part": null
+    }
+   ],
+   "links": [
+    [
+     "dg",
+     "msb",
+     "el"
+    ],
+    [
+     "msb",
+     "bt",
+     "el"
+    ],
+    [
+     "msb",
+     "rf",
+     "el"
+    ],
+    [
+     "msb",
+     "cr",
+     "el"
+    ],
+    [
+     "msb",
+     "pm",
+     "el"
+    ],
+    [
+     "msb",
+     "tr",
+     "el"
+    ],
+    [
+     "tr",
+     "lt",
+     "el"
+    ],
+    [
+     "sh",
+     "msb",
+     "el",
+     [
+      [
+       250,
+       300
+      ],
+      [
+       250,
+       150
+      ]
+     ]
+    ],
+    [
+     "eg",
+     "esb",
+     "el"
+    ],
+    [
+     "msb",
+     "esb",
+     "el",
+     [
+      [
+       330,
+       200
+      ],
+      [
+       330,
+       480
+      ]
+     ]
+    ],
+    [
+     "esb",
+     "ec",
+     "el"
+    ],
+    [
+     "bat",
+     "ec",
+     "el"
+    ]
+   ]
+  }
+ ]
+}
